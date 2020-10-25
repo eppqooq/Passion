@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/common :: header"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Member </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>NO</th>
+                  <th>Rank</th>
+                  <th>ID</th>
+                  <th>PASSWORD</th>
+                  <th>NAME</th>
+                  <th>TEL</th>
+                  <th>BIRTHDAY</th>
+                  <th>KINDS</th>
+                  <th>ADDRESS</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>NO</th>
+                  <th>Rank</th>
+                  <th>ID</th>
+                  <th>PASSWORD</th>
+                  <th>NAME</th>
+                  <th>TEL</th>
+                  <th>BIRTHDAY</th>
+                  <th>KINDS</th>
+                  <th>ADDRESS</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr th:each = "member : ${members}">
+                  <td th:text="${member.no}">NO</td>
+                  <td th:text="${member.rank}">RANK</td>
+                  <td> <a th:href="@{/admin/member/view(no=${member.no})}" th:text="${member.id}"> ID </a></td>
+                  <td th:text="${member.password}">PASSWORD</td>
+                  <td th:text="${member.name}">NAME</td>
+                  <td th:text="${member.tel}">TEL</td>
+                  <td th:text="${member.birthday}">BIRTHDAY</td>
+                  <td th:text="${member.kinds}">KINDS</td>
+                  <td th:text="${member.address}">ADDRESS</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+
+<div th:replace="fragments/common :: footer"></div>

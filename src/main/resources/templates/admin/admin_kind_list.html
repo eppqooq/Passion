@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/common :: header"></div>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Kind </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAME</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAME</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each = "kind : ${kinds}">
+                            <td th:text="${kind.no}">NO</td>
+                            <td> <a th:href="@{/admin/kind/view(no=${kind.no})}" th:text="${kind.name}"> NAME </a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/common :: footer"></div>
