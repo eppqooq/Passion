@@ -25,6 +25,7 @@ public class AdminHospitalService
     {
         return hospitalRepository.findByNo(no);
     }
+
     public Hospital editFormHospitalObject(Hospital hospital, HospitalForm hospitalForm)
     {
         String tel = hospitalForm.getTel1() + hospitalForm.getTel2() + hospitalForm.getTel3();

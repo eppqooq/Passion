@@ -8,12 +8,11 @@ public class MainController {
     @GetMapping("/")
     public String main()
     {
-        return "/admin/admin_main";
+        return "main/index";
     }
     @GetMapping("admin")
     public String admin_main()
     {
-        return "/admin/admin_main"; // template/admin/admin_main + .html
+        return "admin/admin_main"; // template/admin/admin_main + .html
     }
-
 }

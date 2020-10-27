@@ -61,8 +61,8 @@ public class AdminKindController
     public String kindUpdate(KindForm kindForm)
     {
         Kind kind = new Kind();
-        kind=adminKindService.editFormKindObject(kind,kindForm);
-        adminKindService.saveKind(kind);
+        kind = adminKindService.editFormKindObject(kind,kindForm);
+        adminKindService.updateKind(kind);
         return "redirect:list";
     }
 

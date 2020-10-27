@@ -22,7 +22,7 @@ public class AdminMemberController
 
     public AdminMemberController(AdminMemberService adminMemberService) {
         this.adminMemberService = adminMemberService;
-        System.out.println("AdminmemberService.getClass() = " + adminMemberService.getClass());
+        System.out.println("AdminMemberService.getClass() = " + adminMemberService.getClass());
     }
 
     @GetMapping("list")
@@ -49,7 +49,6 @@ public class AdminMemberController
         adminMemberService.updateMember(member);
         return "redirect:list";
     }
-
     @GetMapping("view")
     public String memberView(@RequestParam("no") Long no, Model model)
     {

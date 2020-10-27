@@ -1,0 +1,664 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+    <head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Doclist</title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <style type="text/css" media="screen">
+p, table, hr, .box {
+	margin-bottom: 25px;
+}
+.box p {
+	margin-bottom: 10px;
+}
+</style>
+    </head>
+
+    <body>
+    <div class="container">
+      <h3 class="center alt">&ldquo;Doclist&rdquo; Documentation by &ldquo;Amentotech</h3>
+      <hr>
+      <h1 class="center">&ldquo;Doclist&rdquo;</h1>
+      <div class="borderTop">
+        <div class="span-6 colborder info prepend-1">
+          <p class="prepend-top"> <strong> Created: 6/20/2019<br>
+            By: Amentotech<br>
+            Email: <a href="mailto:theamentotech@gmail.com">theamentotech@gmail.com</a> </strong> </p>
+        </div>
+        <!-- end div .span-6 -->
+        
+        <div class="span-12 last">
+          <p class="prepend-top append-0">Thank you for purchasing our template. If you have any questions that are beyond the scope of this help file, please feel free to create a ticket on our help desk <a target="_blank" href="https://amentotech.ticksy.com">here</a>. Thanks so much!</p>
+        </div>
+      </div>
+      <!-- end div .borderTop -->
+      
+      <hr>
+      <h2 id="toc" class="alt">Table of Contents</h2>
+      <ol id="docs" class="alpha">
+        <li class="menu-item-has-children"> <a href="javascript:void(0);">Start</a>
+          <ul class="sub-menu children">
+            <li><a data-scrollto="#step1" href="#">Installation</a></li>
+            <li><a data-scrollto="#step2" href="#">HTML Structure</a></li>
+            <li><a data-scrollto="#step3" href="#">Use of CSS / JS files</a></li>
+            <li><a data-scrollto="#step4" href="#">Logo Settings</a></li>
+            <li><a data-scrollto="#step5" href="#">Color Schemes</a></li>
+            <li><a data-scrollto="#step6" href="#">Changing Fonts</a></li>
+            <li><a data-scrollto="#step7" href="#">Optimization Tips</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children"> <a href="javascript:void(0);">Header</a>
+          <ul class="sub-menu children">
+            <li><a data-scrollto="#step8" href="#">Menus</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children"><a href="javascript:void(0);">Sliders</a>
+          <ul class="sub-menu children">
+            <li><a data-scrollto="#step9" href="#">Types &amp; Options</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children"> <a href="javascript:void(0);">Pages</a>
+          <ul class="sub-menu children">
+            <li><a data-scrollto="#step10" href="#">Introduction</a></li>
+            <li><a data-scrollto="#step11" href="#">Sections</a></li>
+            <li><a data-scrollto="#step12" href="#">Google Maps</a></li>
+            <li><a data-scrollto="#step13" href="#">Icons</a></li>
+          </ul>
+        </li>
+        <li><a data-scrollto="#step13" href="#">Change Log</a></li>
+      </ol>
+      <div class="docs-content">
+        <hr>
+        <h3 id="step1"><strong>Installation</strong> - <a href="#" data-scrollto="#toc">top</a></h3>
+        <p>Follow the steps below to get started with your Site Template:</p>
+        <ul>
+          <li>Open the <code>Main-files/HTML</code> Folder to find all the Templates Files</li>
+          <li>You will need to Upload these files to your Web Server using FTP in order to use it on your Website.</li>
+          <li>Make sure you upload the required files/folders listed below:</li>
+          <li class="list-style">
+            <ul>
+              <li><code>HTML/css</code> - Extra Stylesheets Folder</li>
+              <li><code>HTML/images</code>- Images Folder</li>
+              <li><code>HTML/js</code> - Javacripts Folder</li>
+              <li><code>HTML/css/main.css</code> - Main Stylesheet File you can also rename it to style.css (for wordpress)</li>
+              <li><code>HTML/index.html</code> - Index File/Homepage</li>
+            </ul>
+            <span>The other files can be used according to your preferences.</span> </li>
+          <li>You're now good to go..! Start adding your Content and show off your Brand New Beautiful Website in style.</li>
+        </ul>
+        <hr>
+        <h3 id="step2"><strong>HTML Structure</strong> - <a href="" data-scrollto="#toc">Top</a></h3>
+        <p>Journal Follows A Simple Coding Structure. Here Is The Sample:</p>
+        <pre>&lt;!doctype html&gt;
+&lt;!--[if lt IE 7]&gt;		&lt;html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;			&lt;html class="no-js lt-ie9 lt-ie8" lang=""&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;			&lt;html class="no-js lt-ie9" lang=""&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt;	&lt;html class="no-js" lang=""&gt; &lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+	&lt;title&gt;BootStrap HTML5 CSS3 Theme&lt;/title&gt;
+	&lt;meta name="description" content=""&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+	&lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;
+	&lt;link rel="icon" href="images/favicon.png" type="image/x-icon"&gt;
+	&lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;
+	&lt;link rel="stylesheet" href="css/normalize.css"&gt;
+	&lt;link rel="stylesheet" href="css/scrollbar.css"&gt;
+	&lt;link rel="stylesheet" href="css/fontawesome/fontawesome-all.css"&gt;
+	&lt;link rel="stylesheet" href="css/font-awesome.min.css"&gt;
+	&lt;link rel="stylesheet" href="css/themify-icons.css"&gt;
+	&lt;link rel="stylesheet" href="css/owl.carousel.min.css"&gt;
+	&lt;link rel="stylesheet" href="css/pogoslider.css"&gt;
+	&lt;link rel="stylesheet" href="css/jquery-ui.css"&gt;
+	&lt;link rel="stylesheet" href="css/linearicons.css"&gt;
+	&lt;link rel="stylesheet" href="css/chosen.css"&gt;
+	&lt;link rel="stylesheet" href="css/pogoslider.css"&gt;
+	&lt;link rel="stylesheet" href="css/main.css"&gt;
+	&lt;link rel="stylesheet" href="css/dashboard.css"&gt;
+	&lt;link rel="stylesheet" href="css/transitions.css"&gt;
+	&lt;link rel="stylesheet" href="css/responsive.css"&gt;
+	&lt;link rel="stylesheet" href="css/humzaresponsive.css"&gt;
+	&lt;script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body class="dc-home dc-userlogin"&gt;
+	&lt;!--[if lt IE 8]&gt;
+		&lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt;
+		 browser. Please &lt;a href="http://browsehappy.com/"&gt;
+		upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;
+	&lt;![endif]--&gt;
+	&lt;!-- Wrapper Start --&gt;
+	&lt;div id="dc-wrapper" class="dc-wrapper dc-haslayout"&gt;
+		&lt;!-- Header Start --&gt;
+		&lt;header id="dc-header" class="dc-header dc-haslayout"&gt;
+			&lt;div class="dc-topbar"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-12 col-sm-12 col-md-12 col-lg-12"&gt;
+							
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="dc-navigationarea"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-12 col-sm-12 col-md-12 col-lg-12"&gt;
+							
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/header&gt;
+		&lt;!-- Header End --&gt;
+		&lt;!-- Home Slider Start --&gt;
+		&lt;div class="dc-homesliderholder dc-haslayout"&gt;
+			&lt;div id="dc-homeslider" class="dc-homeslider"&gt;
+				
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Home Slider End --&gt;
+		&lt;!-- Main Start --&gt;
+		&lt;main id="dc-main" class="dc-main dc-haslayout"&gt;
+			&lt;!-- Search Section Start --&gt;
+			&lt;section class="dc-searchholder dc-haslayout"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="dc-haslayout"&gt;
+					&lt;div class="container-fluid"&gt;
+						&lt;div class="row"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Search Section End --&gt;
+			&lt;!-- Bring Care Start --&gt;
+			&lt;section class="dc-haslayout dc-main-section dc-sectionbg"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-12 col-sm-12 
+						col-md-12 col-lg-6 align-self-center"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-12 col-sm-12 col-md-12 col-lg-6"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Bring Care End --&gt;
+			&lt;!-- Works Section Start --&gt;
+			&lt;section class="dc-haslayout"&gt;
+				&lt;div class="dc-haslayout dc-bgcolor dc-main-section dc-workholder"&gt;
+					&lt;div class="container"&gt;
+						&lt;div class="row justify-content-center
+						 align-self-center"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="dc-haslayout dc-main-section dc-workdetails-holder"&gt;
+					&lt;div class="container"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col-12 col-sm-6 col-md-4 
+							col-lg-4"&gt;
+								
+							&lt;/div&gt;
+							&lt;div class="col-12 col-sm-6 col-md-4 
+							col-lg-4"&gt;
+								
+							&lt;/div&gt;
+							&lt;div class="col-12 col-sm-6 col-md-4 
+							col-lg-4"&gt;
+								
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Works Section End --&gt;
+			&lt;!-- Our Rated Start --&gt;
+			&lt;section class="dc-haslayout dc-main-section"&gt;
+				&lt;div class="container-fluid"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 
+						col-lg-4 col-xl-3"&gt;
+							&lt;div class="row"&gt;
+								
+							&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 
+						col-lg-8 col-xl-9"&gt;
+							&lt;div class="row"&gt;
+								
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Our Rated End --&gt;
+			&lt;!-- Mobile App Start --&gt;
+			&lt;section class="dc-haslayout dc-bgcolor"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 col-lg-6"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 col-lg-6
+						 justify-content-center align-self-center"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Mobile App End --&gt;
+			&lt;!-- Latest Articles Start --&gt;
+			&lt;section class="dc-haslayout dc-main-section"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row justify-content-center align-self-center"&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-12 
+						col-lg-8 push-lg-2"&gt;
+							
+						&lt;/div&gt;
+						
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!-- Latest Articles End --&gt;
+			&lt;!--Skills Start--&gt;
+			&lt;section class="dc-haslayaout dc-footeraboutus dc-bgcolor"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-12 col-sm-6 col-md-3 col-lg-3"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-12 col-sm-6 col-md-3 col-lg-3"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-12 col-sm-6 col-md-3 col-lg-3"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-12 col-sm-6 col-md-3 col-lg-3"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;!--Skills Start End--&gt;
+		&lt;/main&gt;
+		&lt;!-- Main End --&gt;
+		&lt;!-- Footer Start --&gt;
+		&lt;footer id="dc-footer" class="dc-footer dc-haslayout"&gt;
+			&lt;div class="dc-footertopbar"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row justify-content-center align-self-center"&gt;
+						
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="dc-fthreecolumns"&gt;
+				&lt;div class="container"&gt;
+					&lt;div class="row"&gt;
+						&lt;div class="col-xs-12 col-sm-12 col-md-6 col-lg-6
+						 float-left"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-xs-12 col-sm-6 col-md-6 col-lg-3
+						 float-left"&gt;
+							
+						&lt;/div&gt;
+						&lt;div class="col-xs-12 col-sm-6 col-md-6 col-lg-3
+						 float-left"&gt;
+							
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="dc-footerbottom"&gt;
+					&lt;div class="container"&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="col-12 col-sm-12"&gt;
+								
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+		&lt;/footer&gt;
+		&lt;!-- Footer End --&gt;
+	&lt;/div&gt;
+	&lt;script src="js/vendor/jquery-library.js"&gt;&lt;/script&gt;
+	&lt;script src="js/vendor/bootstrap.min.js"&gt;&lt;/script&gt;
+	&lt;script src="js/owl.carousel.min.js"&gt;&lt;/script&gt;
+	&lt;script src="js/moment.min.js"&gt;&lt;/script&gt;
+	&lt;script src="js/fullcalendar.min.js"&gt;&lt;/script&gt;
+	&lt;script src="js/chosen.jquery.js"&gt;&lt;/script&gt;
+	&lt;script src="js/prettyPhoto.js"&gt;&lt;/script&gt;
+	&lt;script src="js/slick.min.js"&gt;&lt;/script&gt;
+	&lt;script src="js/jquery-ui.js"&gt;&lt;/script&gt;
+	&lt;script src="js/jRate.js"&gt;&lt;/script&gt;
+	&lt;script src="js/main.js"&gt;&lt;/script&gt;
+	&lt;script src="js/qasim.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        <hr>
+        <h3 id="step3"><strong>How To Use CSS / JS Files</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>CSS and JS both are important part of the website. we've included all the plugins css/js inside main.css, and main.js files with proper commenting to avoid more http request to server and to make website farster. <strong> main.css</strong> Inside HTML > CSS you can find main.css which contains all the css.</p>
+        <pre>	&lt;link rel="stylesheet" href="css/main.css"&gt;
+</pre>
+        <p><strong> Bootstrap.css</strong> Inside HTML > CSS you can find bootstrap.css which is the main part of the website as Doclist based on bootstrap 3 it is recommended to include bootstrap.css file right after main.css file.</p>
+        <pre>	&lt;link rel="stylesheet" href="css/bootstrap.css"&gt;
+</pre>
+        <p><strong> main.js</strong> Inside HTML > JS you can find main.js which contains all the custom and plugins code used in website.</p>
+        <pre>	&lt;script src="js/main.js"&gt;&lt;/script&gt;
+</pre>
+        <hr>
+        <h3 id="step4"><strong>Logo Settings</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>The Logo Container can be found in the Header Container - logo</p>
+        <pre>
+	&lt;strong class="dc-logo"&gt;&lt;a href="index.html"&gt;
+	&lt;img src="images/logo.png" alt="company logo here"&gt;&lt;/a&gt;&lt;/strong&gt;</pre>
+        <p>NOTE The Logo Image's maximum width can be 175px and maximum height can be 29px</p>
+        <hr>
+        <h3 id="step5"><strong>Color Schemes</strong> - <a href="" data-scrollto="#toc">Top</a></h3>
+        <p>You can change your Website's Color Scheme in an instant. You simply need to change the Color Code in the css/main.css file &amp; you are good to go.</p>
+        <p> Colors are defined with :root in  css/main.css you can change the root value to change the primary and secondary colors </p>
+        <pre>	&lt;head&gt;
+		...
+		&lt;link rel="stylesheet" href="css/main.css" type="text/css" /&gt;
+
+	&lt;/head&gt;
+</pre>
+        <p>Now simply change the Codes according to your requirements</p>
+        <hr>
+        <h3 id="step6"><strong>Changing Fonts</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>Change your Fonts on the Fly as we have included fonts in main.css file. Doclist uses 2 Fonts namely:<strong> Poppins</strong> and <strong>Open+Sans</strong> from the<a href="http://www.google.com/fonts" target="_blank"> Google Fonts Library.</a> You can find the Linking to the Font Files in the <strong>main.css</strong> file</p>
+        <pre>	@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,<br>600|Poppins:300,400,500,600,700);
+</pre>
+        <p>In order to change the Fonts, you will need to Edit the Above Links with your Custom Font if you plan to use a Google Font or Remove it complete if you plan to use a Self Hosted font. Here is an Example for using <a href="http://css-tricks.com/snippets/css/using-font-face/" target="_blank">Self Hosted Fonts.</a></p>
+
+        <hr>
+        <h3 id="step8"><strong>Menu</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <pre>
+&lt;nav id="dc-nav" class="dc-nav navbar-expand-lg"&gt;
+	&lt;button class="navbar-toggler" type="button"
+	 data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" 
+	 aria-expanded="false"
+	 aria-label="Toggle navigation"&gt;
+	&lt;i class="lnr lnr-menu"&gt;&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;div class="collapse navbar-collapse dc-navigation" id="navbarNav"&gt;
+		&lt;ul class="navbar-nav"&gt;
+			&lt;li class="nav-item"&gt;
+				&lt;a href="javascript:void(0);"&gt;Health Forum&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class="menu-item-has-children page_item_has_children"&gt;
+			&lt;span class="dc-dropdowarrow"&gt;
+			&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;
+			&lt;/span&gt;
+				&lt;a href="javascript:void(0);"&gt;
+				How It Works?
+				&lt;/a&gt;
+				&lt;ul class="sub-menu"&gt;
+					&lt;li&gt;
+						&lt;a href="howitsworkv1.html"&gt;
+						How It Works V1
+						&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href="howitsworkv2.html"&gt;
+						How It Works V2
+						&lt;/a&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li class="menu-item-has-children page_item_has_children dc-navactive"&gt;
+			&lt;span class="dc-dropdowarrow"&gt;
+			&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+				&lt;a href="javascript:void(0);"&gt;Pages&lt;/a&gt;
+				&lt;ul class="sub-menu"&gt;
+					&lt;li class="menu-item-has-children page_item_has_children 
+					dc-notificationicon"&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;
+					&lt;/i&gt;&lt;/span&gt;
+						&lt;a href="javascript:void(0);"&gt;Home&lt;/a&gt;
+						&lt;ul class="sub-menu"&gt;
+							&lt;li&gt;&lt;a href="index.html"&gt;
+							Home Version 1
+							&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li class="dc-newnoti"&gt;
+							&lt;a href="indexv2.html"&gt;
+							Home Version 2&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class="menu-item-has-children page_item_has_children"&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;
+					&lt;/span&gt;&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;&lt;/span&gt;
+						&lt;a href="javascript:void(0);"&gt;Article&lt;/a&gt;
+						&lt;ul class="sub-menu"&gt;
+							&lt;li&gt;
+							&lt;a href="blog-list.html"&gt;
+							   Article List
+							&lt;/a
+							&gt;&lt;/li&gt;
+							&lt;li&gt;
+							&lt;a href="blog-grid.html"&gt;
+							  Article Grid
+							&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li&gt;
+							&lt;a href="blog-single.html"&gt;
+							  Article Single
+							&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class="menu-item-has-children page_item_has_children"&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;
+					&lt;/span&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;&lt;/i&gt;
+					&lt;/span&gt;
+						&lt;a href="javascript:void(0);"&gt;Search Result&lt;/a&gt;
+						&lt;ul class="sub-menu"&gt;
+							&lt;li&gt;
+							&lt;a href="searchresultlistv1.html"&gt;
+							Search Result List V1&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li&gt;
+							&lt;a href="searchresultlistv2.html"&gt;
+							Search Result List V2&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li&gt;
+							&lt;a href="searchresultgrid.html"&gt;
+							Search Result Grid&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href="doctorsingle.html"&gt;Doctor Single&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href="about.html"&gt;About&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href="javascript:void(0);"&gt;Privacy Policy&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li class="menu-item-has-children page_item_has_children"&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;
+					&lt;/i&gt;&lt;/span&gt;&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;
+					&lt;/i&gt;&lt;/span&gt;
+						&lt;a href="javascript:void(0);"&gt;Contact Us&lt;/a&gt;
+						&lt;ul class="sub-menu"&gt;
+							&lt;li&gt;&lt;a href="contactusvone.html"&gt;
+							Contact Us V1&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="contactvtwo.html"&gt;
+							Contact Us V2&lt;/a&gt;&lt;/li&gt;														
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li class="menu-item-has-children page_item_has_children"&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;
+					&lt;/i&gt;&lt;/span&gt;
+					&lt;span class="dc-dropdowarrow"&gt;
+					&lt;i class="lnr lnr-chevron-right"&gt;
+					&lt;/i&gt;&lt;/span&gt;
+						&lt;a href="javascript:void(0);"&gt; Coming Soon&lt;/a&gt;
+						&lt;ul class="sub-menu"&gt;
+							&lt;li&gt;
+							&lt;a href="commingsoonV1.html"&gt;
+							Comming Soon V1&lt;/a&gt;
+							&lt;/li&gt;
+							&lt;li&gt;
+							&lt;a href="commingsoonV2.html"&gt;
+							Comming Soon V2&lt;/a&gt;
+							&lt;/li&gt;														
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li&gt;
+						&lt;a href="404page.html"&gt;404page&lt;/a&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;
+</pre>
+        <hr>
+        <h3 id="step9"><strong>Slider Types &amp; Their Options</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>Doclist includes two slider.Owl Slider V2 and Slick Slider for you to be used on any Page with 100s of Options.</p>
+        <p><strong>Owl Slider V2</strong></p>
+        <pre>		
+var _dc_doctorslider = jQuery("#dc-doctorslider")
+	_dc_doctorslider.owlCarousel({
+		loop:false,
+		margin:0,
+		navSpeed:500,
+		nav:false,
+		autoplay: false,
+		items:5,
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:1,
+			},
+			600:{
+				items:2,
+			},
+			800:{
+				items:3,
+			},
+			1080:{
+				items:4,
+			},
+			1280:{
+				items:5,
+			},
+		}	
+	});
+</pre>
+        <p><strong>Slick Slider</strong></p>
+        <pre> var feedbackslider = jQuery('#dc-feedbackslider')
+	$(feedbackslider).slick({
+	    slidesToShow: 1,
+	    slidesToScroll: 1,
+	    arrows: false,
+	    loop:false,
+	    fade: false,
+	    swipe: false,
+	    asNavFor: authorpicslider,
+	  });
+</pre>
+        <hr>
+        <h3 id="step10"><strong>Introduction</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>Doclist boasts of a huge number of handy Pages which are quite powerful, flexible, functional &amp; easy to use. Setting up pages is very easy &amp; Self Explanatory. Here is the List of Pages included with Doclist</p>
+        <ol class="project-pages">
+          <li><code>index</code></li>
+          <li><code>indexv2</code></li>
+          <li><code>about</code></li>
+          <li><code>about</code></li>
+          <li><code>blog-grid</code></li>
+          <li><code>blog-list</code></li>
+          <li><code>blog-single</code></li>
+          <li><code>commingsoonv1</code></li>
+          <li><code>commingsoonv2</code></li>
+          <li><code>contactusvone</code></li>
+          <li><code>contactvusvtwo</code></li>
+          <li><code>doctorsingle</code></li>
+          <li><code>healthforum</code></li>
+          <li><code>healthforumanswer</code></li>
+          <li><code>hospitalsingle</code></li>
+          <li><code>howitsworkv1</code></li>
+          <li><code>howitsworkv2</code></li>
+          <li><code>register</code></li>
+          <li><code>register-02</code></li>
+          <li><code>register-03</code></li>
+          <li><code>register-04</code></li>
+          <li><code>searchresultgrid</code></li>
+          <li><code>searchresultlistv1</code></li>
+          <li><code>searchresultlistv2</code></li>
+          <li><code>404page</code></li>
+        </ol>
+        <p>Each of the above mentioned Pages are easily extendable, flexible &amp; easy to use. You can find the sample codes in their respective files. We are explaining a few of them for your Reference.</p>
+        <hr>
+        <h3 id="step11"><strong>Sections</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>Setup content you want to stand out. You can use Parallax Images or HTML5 Videos as Sections.</p>
+        <p><strong>Setting Up Sections:</strong></p>
+        <p>Setup your Sections outside the <strong>.container</strong> element. sections padding-top and padding-boottom is 80px by default but you can change it by adding handy classes like paddingnull, padding-top-20 etc.</p>
+        <p><strong>Light Section:</strong></p>
+        <pre>	&lt;section class="dc-haslayout dc-main-section"&gt;
+	
+	&lt;/section&gt;
+</pre>
+        <hr>
+        <h3 id="step12"><strong>Google Maps</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>You can add Embedded Google Maps to any Page using the following setup:</p>
+        <p><strong>Step 1:</strong></p>
+        <p>Add the Google Maps Specific Scripts in the <strong>&lt;main.js&gt;</strong> Tag below the<strong> js/main.js</strong> script linking:</p>
+        <pre>
+	&lt;script src="https://maps.google.com/maps/api/js?key=YOUR-API-KEY"&gt;&lt;/script&gt;
+</pre>
+        <p><strong>Step 2:</strong></p>
+        <p>Add a <strong>div</strong> which will contain your Google Map:</p>
+        <pre>
+	&lt;div id="dc-locationmap" class="dc-locationmap"&gt;&lt;/div&gt;
+</pre>
+        <hr>
+        <h3 id="step13"><strong>Icons</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>We've used <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome icons , </a> <a href="https://themify.me/themify-icons" target="_blank"> themify-icons</a>. and <a href="https://linearicons.com/free" target="_blank">Linearicons</a>.</p>
+        <hr>
+        <h3 id="changelog"><strong>Version 1.0</strong> - <a href="" data-scrollto="#toc">top</a></h3>
+        <p>Released on <strong>20 June 2019</strong></p>
+        <pre>- Released Doclist Template</pre>
+        <hr class="space">
+      </div>
+    </div>
+    <!-- end div .container --> 
+    <script src="assets/js/jquery.js"></script> 
+    <script src="assets/js/plugins.js"></script> 
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

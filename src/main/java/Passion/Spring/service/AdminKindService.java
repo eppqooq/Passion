@@ -26,10 +26,11 @@ public class AdminKindService
     }
     public Kind editFormKindObject(Kind kind, KindForm kindForm)
     {
+        kind.setNo(kindForm.getNo());
         kind.setName(kindForm.getName());
         return kind;
     }
-    public void saveKind(Kind kind)
+    public void updateKind(Kind kind)
     {
         kindRepository.save(kind);
     }

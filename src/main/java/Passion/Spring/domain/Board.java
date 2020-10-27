@@ -1,5 +1,7 @@
 package Passion.Spring.domain;
 
+import org.hibernate.type.descriptor.sql.TinyIntTypeDescriptor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,28 +15,12 @@ public class Board {
     private Long no;
     private Long member_no;
     private String title;
-    private String kind_name;
+    private String kind_no;
+    private String content;
     private String picture;
     private Integer views;
-    public Date createDay;
-    public Date updateDay;
-
-    public Integer getViews() {
-        return views;
-    }
-
-    public void setViews(Integer views) {
-        this.views = views;
-    }
-
-    public Integer getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Integer available) {
-        this.available = available;
-    }
-
+    public String create_day;
+    public String update_day;
     public Integer available;
 
     public Long getNo() {
@@ -61,12 +47,20 @@ public class Board {
         this.title = title;
     }
 
-    public String getKind_name() {
-        return kind_name;
+    public String getKind_no() {
+        return kind_no;
     }
 
-    public void setKind_name(String kind_name) {
-        this.kind_name = kind_name;
+    public void setKind_no(String kind_no) {
+        this.kind_no = kind_no;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getPicture() {
@@ -77,19 +71,35 @@ public class Board {
         this.picture = picture;
     }
 
-    public Date getCreateDay() {
-        return createDay;
+    public Integer getViews() {
+        return views;
     }
 
-    public void setCreateDay(Date createDay) {
-        this.createDay = createDay;
+    public void setViews(Integer views) {
+        this.views = views;
     }
 
-    public Date getUpdateDay() {
-        return updateDay;
+    public String getCreate_day() {
+        return create_day;
     }
 
-    public void setUpdateDay(Date updateDay) {
-        this.updateDay = updateDay;
+    public void setCreate_day(String create_day) {
+        this.create_day = create_day;
+    }
+
+    public String getUpdate_day() {
+        return update_day;
+    }
+
+    public void setUpdate_day(String update_day) {
+        this.update_day = update_day;
+    }
+
+    public Integer getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
     }
 }

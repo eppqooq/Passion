@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/common :: header"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Board </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>NO</th>
+                  <th>member_no</th>
+                  <th>title</th>
+                  <th>kind_name</th>
+                  <th>picture</th>
+                  <th>views</th>
+                  <th>createDay</th>
+                  <th>updateDay</th>
+
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>NO</th>
+                  <th>member_no</th>
+                  <th>title</th>
+                  <th>kind_name</th>
+                  <th>picture</th>
+                  <th>views</th>
+                  <th>createDay</th>
+                  <th>updateDay</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr th:each = "board : ${boards}">
+                  <td th:text="${board.no}">NO</td>
+                  <td th:text="${board.member_no}">작성자</td>
+                  <td> <a th:href="@{/admin/board/view(no=${board.no})}" th:text="${board.title}"> 제목 </a></td>
+                  <td th:text="${board.kind_no}">진료과목</td>
+                  <td th:text="${board.picture}">사진 이름</td>
+                  <td th:text="${board.views}">조회수</td>
+                  <td th:text="${board.create_day}">작성일</td>
+                  <td th:text="${board.update_day}">수정일</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+
+<div th:replace="fragments/common :: footer"></div>

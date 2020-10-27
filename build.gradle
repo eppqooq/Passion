@@ -31,5 +31,14 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+//apply plugin: 'idea' // jar파일 때
+//----------WAR 파일 만들 때-------------
+apply plugin: 'war'
 
-apply plugin: 'idea'
+bootWar
+{
+	archiveBaseName="Handspital"
+	archiveFileName="Handspital.war"
+	archiveVersion="0.0.0"
+}
+//---------WAR 파일 만들 때 끝-----------

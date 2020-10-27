@@ -70,10 +70,8 @@
 </table>
 
 
-
 <div align="center">
-    <a href="/admin/kind/edit" class="btn btn-sm mycolor1">수정</a>&nbsp;
-    <input type="submit" value="저장" style="cursor:pointer !important;" class="btn btn-sm mycolor1">&nbsp;
+    <a th:href="@{/admin/kind/edit(no=${kind.get().getNo()})}" class="btn btn-sm mycolor1">수정</a>&nbsp;
     <form class="btn btn-sm " style="margin-left:-4px;"   action="/admin/kind/delete" method="post">
         <input type="hidden" class="btn btn-sm mycolor1" name="no" th:value="${kind.get().getNo()}" />
         <button class="link-delete-article"  type="submit" onClick="return confirm('삭제할까요 ?');">삭제</button>

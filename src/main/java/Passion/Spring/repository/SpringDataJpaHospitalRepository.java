@@ -13,6 +13,4 @@ public interface SpringDataJpaHospitalRepository extends JpaRepository<Hospital,
     Optional<Hospital> findByNo(Long no);
     @Override
     void deleteByNo(Long no);
-
-
 }
