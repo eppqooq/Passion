@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="fragments/common :: header"></div>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Review </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>MEMBER_NO</th>
+                            <th>HOSPITAL_NO</th>
+                            <th>CONTENT</th>
+                            <th>SCORE</th>
+                            <th>CREATE_DAY</th>
+                            <th>UPDATE_DAY</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>NO</th>
+                            <th>MEMBER_NO</th>
+                            <th>HOSPITAL_NO</th>
+                            <th>CONTENT</th>
+                            <th>SCORE</th>
+                            <th>CREATE_DAY</th>
+                            <th>UPDATE_DAY</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each = "review : ${reviews}">
+                            <td> <a th:href="@{/admin/review/view(no=${review.no})}" th:text="${review.no}"> NO </a></td>
+                            <td th:text="${review.member_no}">MEMBER_NO</td>
+                            <td th:text="${review.hospital_no}">HOSPITAL_NO</td>
+                            <td th:text="${review.content}">CONTENT</td>
+                            <td th:text="${review.score}">SCORE</td>
+                            <td th:text="${review.create_day}">CREATEDAY</td>
+                            <td th:text="${review.update_day}">UPDATEDAY</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/common :: footer"></div>

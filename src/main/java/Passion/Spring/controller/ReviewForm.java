@@ -1,14 +1,8 @@
-package Passion.Spring.domain;
+package Passion.Spring.controller;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class Review {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ReviewForm {
     private Long no;
     private Long member_no;
     private Long hospital_no;

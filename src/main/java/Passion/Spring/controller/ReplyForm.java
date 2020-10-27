@@ -1,18 +1,6 @@
-package Passion.Spring.domain;
+package Passion.Spring.controller;
 
-
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
-
-@Entity
-public class Reply
-{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ReplyForm {
     private Long no;
     private String reg_date;
     private Integer board_no;
