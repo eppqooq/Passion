@@ -1,8 +1,7 @@
 package Passion.Spring.service;
 
-import Passion.Spring.controller.KindForm;
+import Passion.Spring.Form.KindForm;
 import Passion.Spring.domain.Kind;
-import Passion.Spring.domain.Member;
 import Passion.Spring.repository.KindRepository;
 import java.util.List;
 import java.util.Optional;

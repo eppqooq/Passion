@@ -2,9 +2,9 @@
 
 package Passion.Spring.controller;
 
+import Passion.Spring.Form.HospitalForm;
 import Passion.Spring.domain.Hospital;
 import Passion.Spring.service.AdminHospitalService;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

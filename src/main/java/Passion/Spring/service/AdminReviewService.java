@@ -1,11 +1,7 @@
 package Passion.Spring.service;
 
 
-import Passion.Spring.controller.BoardForm;
-import Passion.Spring.controller.KindForm;
-import Passion.Spring.controller.ReviewForm;
-import Passion.Spring.domain.Board;
-import Passion.Spring.domain.Kind;
+import Passion.Spring.Form.ReviewForm;
 import Passion.Spring.domain.Review;
 import Passion.Spring.repository.ReviewRepository;
 

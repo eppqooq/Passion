@@ -1,17 +1,15 @@
-package Passion.Spring.controller;
+package Passion.Spring.Form;
 
 import java.util.Date;
 
-public class BoardForm {
+public class ReviewForm {
     private Long no;
     private Long member_no;
-    private String title;
-    private String kind_no;
+    private Long hospital_no;
     private String content;
-    private String picture;
-    private Integer views;
-    public String create_day;
-    public String update_day;
+    private Integer score;
+    private String create_day;
+    private String update_day;
     public Integer available;
 
     public Long getNo() {
@@ -30,20 +28,12 @@ public class BoardForm {
         this.member_no = member_no;
     }
 
-    public String getTitle() {
-        return title;
+    public Long getHospital_no() {
+        return hospital_no;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getKind_no() {
-        return kind_no;
-    }
-
-    public void setKind_no(String kind_no) {
-        this.kind_no = kind_no;
+    public void setHospital_no(Long hospital_no) {
+        this.hospital_no = hospital_no;
     }
 
     public String getContent() {
@@ -54,20 +44,12 @@ public class BoardForm {
         this.content = content;
     }
 
-    public String getPicture() {
-        return picture;
+    public Integer getScore() {
+        return score;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
-    public Integer getViews() {
-        return views;
-    }
-
-    public void setViews(Integer views) {
-        this.views = views;
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public String getCreate_day() {

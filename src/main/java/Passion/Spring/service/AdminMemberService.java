@@ -1,10 +1,9 @@
 package Passion.Spring.service;
 
-import Passion.Spring.controller.MemberForm;
+import Passion.Spring.Form.MemberForm;
 import Passion.Spring.domain.Member;
 import Passion.Spring.repository.MemberRepository;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +22,11 @@ public class AdminMemberService
     public Optional<Member> findByNo(Long no)
     {
         return memberRepository.findByNo(no);
+    }
+
+    public Optional<Member> findById(String id)
+    {
+        return memberRepository.findById(id);
     }
     public Member editFormMemberObject(Member member, MemberForm memberForm)
         {

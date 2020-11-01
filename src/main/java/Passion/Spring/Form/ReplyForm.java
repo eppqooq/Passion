@@ -1,4 +1,4 @@
-package Passion.Spring.controller;
+package Passion.Spring.Form;
 
 public class ReplyForm {
     private Long no;

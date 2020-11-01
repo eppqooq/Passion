@@ -15,4 +15,6 @@ public class MainController {
     {
         return "admin/admin_main"; // template/admin/admin_main + .html
     }
+
+
 }

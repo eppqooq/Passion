@@ -13,5 +13,7 @@ public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Lon
     @Override
     Optional<Member> findByNo(Long no);
     @Override
+    Optional<Member> findById(String id);
+    @Override
     void deleteByNo(Long no);
 }

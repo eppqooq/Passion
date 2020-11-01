@@ -1,4 +1,4 @@
-package Passion.Spring.controller;
+package Passion.Spring.Form;
 
 public class HospitalForm {
     private Long no;

@@ -1,7 +1,6 @@
 package Passion.Spring.controller;
 
-import Passion.Spring.domain.Board;
-import Passion.Spring.domain.Member;
+import Passion.Spring.Form.ReviewForm;
 import Passion.Spring.domain.Review;
 import Passion.Spring.service.AdminReviewService;
 import org.springframework.transaction.annotation.Transactional;

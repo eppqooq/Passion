@@ -1,9 +1,8 @@
 package Passion.Spring.controller;
 
+import Passion.Spring.Form.ReplyForm;
 import Passion.Spring.domain.Reply;
-import Passion.Spring.domain.Review;
 import Passion.Spring.service.AdminReplyService;
-import Passion.Spring.service.AdminReviewService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

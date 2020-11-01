@@ -1,11 +1,8 @@
 package Passion.Spring.service;
 
-import Passion.Spring.controller.BoardForm;
-import Passion.Spring.controller.MemberForm;
+import Passion.Spring.Form.BoardForm;
 import Passion.Spring.domain.Board;
-import Passion.Spring.domain.Member;
 import Passion.Spring.repository.BoardRepository;
-import Passion.Spring.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;

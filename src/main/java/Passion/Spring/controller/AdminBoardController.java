@@ -1,7 +1,7 @@
 package Passion.Spring.controller;
 
+import Passion.Spring.Form.BoardForm;
 import Passion.Spring.domain.Board;
-import Passion.Spring.domain.Hospital;
 import Passion.Spring.service.AdminBoardService;
 
 import org.springframework.transaction.annotation.Transactional;

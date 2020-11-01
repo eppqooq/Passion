@@ -1,13 +1,10 @@
 package Passion.Spring.controller;
-
+import Passion.Spring.Form.MemberForm;
 import Passion.Spring.domain.Member;
 import Passion.Spring.service.AdminMemberService;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +21,7 @@ public class AdminMemberController
         this.adminMemberService = adminMemberService;
         System.out.println("AdminMemberService.getClass() = " + adminMemberService.getClass());
     }
+
 
     @GetMapping("list")
     public String memberList(Model model)

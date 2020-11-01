@@ -51,7 +51,16 @@ public class SpringConfig {
         this.boardRepository = boardRepository;
         this.reviewRepository = reviewRepository;
         this.replyRepository = replyRepository;
+
     }
+
+
+    @Bean
+    public LoginService LoginService()
+    {
+        return new LoginService(memberRepository);
+    }
+
     @Bean
     public AdminReplyController adminReplyController()
     {
@@ -63,8 +72,6 @@ public class SpringConfig {
         return new AdminReplyService(replyRepository);
     }
 
-
-
     @Bean
     public AdminReviewController adminReviewController()
     {
@@ -75,8 +82,6 @@ public class SpringConfig {
     {
         return new AdminReviewService(reviewRepository);
     }
-
-
 
     @Bean
     public AdminBoardController adminBoardController()

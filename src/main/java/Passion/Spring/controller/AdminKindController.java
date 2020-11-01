@@ -1,9 +1,8 @@
 package Passion.Spring.controller;
 
+import Passion.Spring.Form.KindForm;
 import Passion.Spring.domain.Kind;
-import Passion.Spring.domain.Member;
 import Passion.Spring.service.AdminKindService;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

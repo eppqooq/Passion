@@ -1,6 +1,6 @@
 package Passion.Spring.service;
 
-import Passion.Spring.controller.HospitalForm;
+import Passion.Spring.Form.HospitalForm;
 import Passion.Spring.domain.Hospital;
 import Passion.Spring.repository.HospitalRepository;
 
