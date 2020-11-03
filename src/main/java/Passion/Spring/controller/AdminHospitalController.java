@@ -22,7 +22,6 @@ public class AdminHospitalController
 
     public AdminHospitalController(AdminHospitalService adminHospitalService) {
         this.adminHospitalService = adminHospitalService;
-        System.out.println("AdminhospitalService.getClass() = " + adminHospitalService.getClass());
     }
 
     @GetMapping("list")
@@ -51,7 +50,7 @@ public class AdminHospitalController
         return "redirect:list";
     }
 
-    @GetMapping("view")
+    @GetMapping("view1")
     public String hospitalView(@RequestParam("no") Long no, Model model)
     {
         Optional<Hospital> hospital = adminHospitalService.findByNo(no);

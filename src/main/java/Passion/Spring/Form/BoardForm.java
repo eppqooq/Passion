@@ -10,9 +10,18 @@ public class BoardForm {
     private String content;
     private String picture;
     private Integer views;
-    public String create_day;
-    public String update_day;
-    public Integer available;
+    private String create_day;
+    private String update_day;
+    private Integer available;
+    private String fileName;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public Long getNo() {
         return no;

@@ -2,6 +2,7 @@ package Passion.Spring.controller;
 import Passion.Spring.Form.MemberForm;
 import Passion.Spring.domain.Member;
 import Passion.Spring.service.AdminMemberService;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 //@Controller
 //@RequestMapping("admin/member") // default 경로 설정
+
 @RequestMapping("admin/member")
 public class AdminMemberController
 {
@@ -19,7 +21,6 @@ public class AdminMemberController
 
     public AdminMemberController(AdminMemberService adminMemberService) {
         this.adminMemberService = adminMemberService;
-        System.out.println("AdminMemberService.getClass() = " + adminMemberService.getClass());
     }
 
 

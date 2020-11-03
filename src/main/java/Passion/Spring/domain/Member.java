@@ -18,6 +18,15 @@ public class Member
     private String kinds; // 흥미있는 진료 과목들
     private String birthday; // 생년월일 입력
     private String tel;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getTel() {
         return tel;

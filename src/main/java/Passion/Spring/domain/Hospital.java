@@ -16,6 +16,39 @@ public class Hospital
     private String tel;
     private String information2; //근처 편의시설
     private Integer kind_no; //조인
+    private String latitude; // 위도
+    private String hardness; // 경도
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getHardness() {
+        return hardness;
+    }
+
+    public void setHardness(String hardness) {
+        this.hardness = hardness;
+    }
+
+
+
+
+
+
 
 
 

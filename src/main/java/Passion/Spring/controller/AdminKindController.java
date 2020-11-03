@@ -19,7 +19,6 @@ public class AdminKindController
 
     public AdminKindController(AdminKindService adminKindService) {
         this.adminKindService = adminKindService;
-        System.out.println("AdminkindService.getClass() = " + adminKindService.getClass());
     }
 
     @GetMapping("list")

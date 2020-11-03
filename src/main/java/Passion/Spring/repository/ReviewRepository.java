@@ -10,4 +10,6 @@ public interface ReviewRepository  {
     List<Review> findAll();
     Optional<Review> findByNo(Long no);
     void deleteByNo(Long no);
+
+
 }

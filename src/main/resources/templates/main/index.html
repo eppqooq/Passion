@@ -1,501 +1,509 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:replace="fragments/common :: m_header"></div>
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<div th:replace="fragments/m_common :: m_header"></div>
 
 
 <div class="dc-homeslidervtwo dc-haslayout">
-	<div id="dc-bannervtwo" class="dc-bannervtwo owl-carousel">
-		<div class="item">
-			<figure class="dc-silderimg"><img src="images/slider/배경.png" alt="img description"></figure>
-		</div>
-		<div class="item">
-			<figure class="dc-silderimg"><img src="images/slider/배경.png" alt="img description"></figure>
-		</div>
-		<div class="item">
-			<figure class="dc-silderimg"><img src="images/slider/배경.png" alt="img description"></figure>
-		</div>
-	</div>
-	<div class="dc-bannervtwocontent">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-6">
-					<div class="dc-medicalfacility">
-						<div class="dc-title">
-							<h2><em>어디가 불편한가요?</em><span> <div id="size2">근처에 있는 병원 찾기</div> </span></h2>
-						</div>
-						<form class="dc-formtheme dc-medicalform">
-							<fieldset>
-								<div class="form-group">
-									<input type="text" name="search" value="" class="form-control" placeholder="병원이름, 진료과목 검색" required="">
-								</div>
-								<div class="form-group">
+    <div id="dc-bannervtwo" class="dc-bannervtwo owl-carousel">
+        <div class="item">
+            <figure class="dc-silderimg"><img src="/main-template/HTML/images/slider/배경.png" alt="img description"></figure>
+        </div>
+        <div class="item">
+            <figure class="dc-silderimg"><img src="/main-template/HTML/images/slider/배경.png" alt="img description"></figure>
+        </div>
+        <div class="item">
+            <figure class="dc-silderimg"><img src="/main-template/HTML/images/slider/배경.png" alt="img description"></figure>
+        </div>
+    </div>
+    <div class="dc-bannervtwocontent">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="dc-medicalfacility">
+                        <div class="dc-title">
+                            <h2><em>어떻게 오셨나요?</em><span> <div id="size2">의료 관련 정보 검색</div> </span></h2>
+                        </div>
+                        <form class="dc-formtheme dc-medicalform" method="post" action="/search">
+                            <fieldset>
+
+                                <div class="form-group">
                                  <span class="dc-select">
-                                    <select class="chosen-select locations" data-placeholder="Country" name="locations">
-                                       <option value="Country">지역 검색</option>
-                                       <option value="Country1">서울특별시 노원구 상계동</option>
-                                       <option value="Country2">서울특별시 노원구 월계동</option>
+                                    <select class="chosen-select locations" data-placeholder="Country" name="searchKind">
+                                       <option value="게시판">게시판</option>
+                                       <option value="병원">병원</option>
+                                        <option value="질병">질병</option>
                                     </select>
                                  </span>
-								</div>
-								<div class="form-group dc-btnarea">
-									<a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
-									<a href="javascript:void(0);" class="dc-btn">검색하기</a>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
-				<div class="d-none col-md-6 d-lg-block">
-					<figure class="dc-slidercontentimg">
-						<img src="images/mainimg.png" alt="img desciption">
-					</figure>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="searchText" value="" class="form-control" placeholder="내용 입력" >
+                                </div>
+                                <div class="form-group dc-btnarea">
+                                    <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
+                                    <input type="submit" value="검색" style="cursor:pointer !important;" class="dc-btn do-login-button">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-none col-md-6 d-lg-block">
+                    <figure class="dc-slidercontentimg">
+                        <img src="/main-template/HTML/images/mainimg.png" alt="img desciption">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Home Slider End -->
 <!-- Main Start -->
 <main id="dc-main" class="dc-main dc-haslayout">
-	<!-- Search Section Start -->
-	<section class="dc-searchholder dc-haslayout">
-		<div class="dc-haslayout">
-			<div class="container-fluid">
-				<div class="row">
-					<div id="dc-doctorslider" class="dc-doctorslider owl-carousel">
-						<div class="item dc-doctordetails-holder dc-titlecolor1">
-							<span class="dc-slidercounter">✍</span>
-							<h3><span>　</span> 회원가입</h3>
-							<a href="register.html" class="dc-btn">Join Now!</a>
-						</div>
-						<div class="item dc-doctordetails-holder dc-titlecolor2">
-							<span class="dc-slidercounter">✏</span>
-							<h3><span>　</span> 로그인</h3>
-							<a href="loginpage.html" class="dc-btn">Login</a>
-						</div>
-						<div class="item dc-doctordetails-holder dc-titlecolor3">
-							<span class="dc-slidercounter">🏢</span>
-							<h3><span>　</span> 근처 병원 찾기</h3>
-							<a href="hospitalsingle.html" class="dc-btn">Nearest Hospitals</a>
-						</div>
-						<div class="item dc-doctordetails-holder dc-titlecolor4">
-							<span class="dc-slidercounter">📑</span>
-							<h3><span>　</span> 병원정보 Q&A</h3>
-							<a href="healthforum.html" class="dc-btn">Q&A bulletin board</a>
-						</div>
-						<div class="item dc-doctordetails-holder dc-titlecolor5">
-							<span class="dc-slidercounter">✉</span>
-							<h3><span>　</span> 담당자 문의</h3>
-							<a href="mailto:Passion@gmail.com" class="dc-btn">Email inquiry</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Search Section End -->
-	<!-- Bring Care Start -->
-	<!-- Bring Care End -->
-	<!-- Works Section Start -->
-	<!-- Works Section End -->
-	<!-- Our Rated Start -->
-	<section class="dc-haslayout dc-main-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">
-					<div class="row">
-						<div class="dc-ratedecontent dc-bgcolor">
-							<figure class="dc-neurosurgeons-img">
-								<img src="images/로고아이콘.png" alt="img description">
-							</figure>
-							<div class="dc-sectionhead dc-sectionheadvtwo dc-text-center">
-								<div class="dc-sectiontitle">
-									<h2>베스트 리뷰<span>노원을지병원</span></h2>
-								</div>
-								<div class="dc-description">
-									<p>(노월을지병원에대한 간략한 설명)</p>
-								</div>
-							</div>
-							<div class="dc-btnarea">
-								<a href="javascript:void(0);" class="dc-btn">자세히보기</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
-					<div class="row">
-						<div id="dc-docpostslider" class="dc-docpostslider owl-carousel">
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/백병원2.png" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">대학병원</a>
-											<h3><a href="javascript:void(0);">인제대학교 상계백병원</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>02-950-1114</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 리뷰</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i>서울특별시 노원구 상계동</span>
-											<span><i class="ti-calendar"></i> <em class="dc-dayon">일</em>, 월, 화, 수, 목, 금</span>
-											<a href="javascript:void(0);" class="dc-btn">자세히 보기</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-02.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Carmelo G. lock </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, <em class="dc-dayon">We</em>, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-04.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Maryland Nicol lock</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, <em class="dc-dayon">Tu</em>, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-03.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Arron Benning</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> FAAAAI (USA), PGT Allergy (UK)</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, <em class="dc-dayon">Fr</em>, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-05.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Nubia Riccardi</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-01.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> <em class="dc-dayon">Mo</em>, Tu, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-03.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, <em class="dc-dayon">Sa</em></span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-02.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Carmelo G. lock </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, <em class="dc-dayon">Tu</em>, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-04.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Maryland Nicol lock</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>Clin Immn (Euro), FCPP</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, <em class="dc-dayon">Sa</em></span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-03.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Arron Benning</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> FAAAAI (USA), PGT Allergy (UK)</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-05.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Nubia Riccardi</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="dc-docpostholder">
-									<figure class="dc-docpostimg">
-										<img src="images/doctors/img-01.jpg" alt="img description">
-										<figcaption>
-											<span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-										</figcaption>
-									</figure>
-									<div class="dc-docpostcontent">
-										<a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-										<div class="dc-title">
-											<a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
-											<h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-											<ul class="dc-docinfo">
-												<li>
-													<em>MBBS, MCPS, MSc (Immunology)</em>
-												</li>
-												<li>
-													<span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-												</li>
-											</ul>
-										</div>
-										<div class="dc-doclocation">
-											<span><i class="ti-direction-alt"></i> Manchester, UK</span>
-											<span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
-											<a href="javascript:void(0);" class="dc-btn">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Our Rated End -->
-	<!-- Mobile App Start -->
-	<!-- Mobile App End -->
-	<!-- Latest Articles Start -->
-	<!--Skills Start End-->
+    <!-- Search Section Start -->
+    <section class="dc-searchholder dc-haslayout">
+        <div class="dc-haslayout">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="dc-doctorslider" class="dc-doctorslider owl-carousel">
+                        <div class="item dc-doctordetails-holder dc-titlecolor1">
+                            <span class="dc-slidercounter">✍</span>
+                            <h3><span>　</span> 질병 </h3>
+                            <a href="/board/list" class="dc-btn">Disease</a>
+                        </div>
+
+                        <div class="item dc-doctordetails-holder dc-titlecolor2">
+                            <span class="dc-slidercounter">✏</span>
+                            <h3><span>　</span> 게시판</h3>
+                            <a href="/board/list" class="dc-btn">Boards</a>
+                        </div>
+                        <div class="item dc-doctordetails-holder dc-titlecolor3">
+                            <span class="dc-slidercounter">🏢</span>
+                            <h3><span>　</span> 병원 목록</h3>
+                            <a href="/hospital/list" class="dc-btn">Hospitals</a>
+                        </div>
+
+                        <div class="item dc-doctordetails-holder dc-titlecolor4">
+                            <span class="dc-slidercounter">📑</span>
+                            <h3><span>　</span> 관리자 페이지 </h3>
+                            <a href="/admin" class="dc-btn">Admin</a>
+                        </div>
+
+                        <div class="item dc-doctordetails-holder dc-titlecolor5">
+                            <span class="dc-slidercounter">✉</span>
+                            <h3><span>　</span> 인덕대 홈페이지</h3>
+                            <a href="mailto:Passion@gmail.com" class="dc-btn">Email inquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Search Section End -->
+    <!-- Bring Care Start -->
+    <!-- Bring Care End -->
+    <!-- Works Section Start -->
+    <!-- Works Section End -->
+    <!-- Our Rated Start -->
+    <section class="dc-haslayout dc-main-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">
+                    <div class="row">
+                        <div class="dc-ratedecontent dc-bgcolor">
+                            <figure class="dc-neurosurgeons-img">
+                                <img src="/main-template/HTML/images/로고아이콘.png" alt="img description">
+                            </figure>
+                            <div class="dc-sectionhead dc-sectionheadvtwo dc-text-center">
+                                <div class="dc-sectiontitle">
+                                    <h2>베스트 리뷰<span>노원을지병원</span></h2>
+                                </div>
+                                <div class="dc-description">
+                                    <p>(노월을지병원에대한 간략한 설명)</p>
+                                </div>
+                            </div>
+                            <div class="dc-btnarea">
+                                <a href="javascript:void(0);" class="dc-btn">자세히보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">
+                    <div class="row">
+                        <div id="dc-docpostslider" class="dc-docpostslider owl-carousel">
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/back2.png" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">대학병원</a>
+                                            <h3><a href="javascript:void(0);">인제대학교 상계백병원</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>02-950-1114</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 리뷰</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i>서울특별시 노원구 상계동</span>
+                                            <span><i class="ti-calendar"></i> <em class="dc-dayon">일</em>, 월, 화, 수, 목, 금</span>
+                                            <a href="javascript:void(0);" class="dc-btn">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-02.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Carmelo G. lock </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, <em class="dc-dayon">We</em>, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-04.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Maryland Nicol lock</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, <em class="dc-dayon">Tu</em>, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-03.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Arron Benning</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> FAAAAI (USA), PGT Allergy (UK)</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, <em class="dc-dayon">Fr</em>, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-05.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Nubia Riccardi</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-01.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> <em class="dc-dayon">Mo</em>, Tu, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-03.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, <em class="dc-dayon">Sa</em></span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-02.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Carmelo G. lock </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, <em class="dc-dayon">Tu</em>, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-04.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Maryland Nicol lock</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>Clin Immn (Euro), FCPP</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, <em class="dc-dayon">Sa</em></span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-03.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Arron Benning</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> FAAAAI (USA), PGT Allergy (UK)</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-05.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Nubia Riccardi</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/doctors/img-01.jpg" alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">Neurosurgeon</a>
+                                            <h3><a href="javascript:void(0);">Dr. Tinisha Amenta</a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>MBBS, MCPS, MSc (Immunology)</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation">
+                                            <span><i class="ti-direction-alt"></i> Manchester, UK</span>
+                                            <span><i class="ti-calendar"></i> Mo, Tu, We, Th, Fr, Sa</span>
+                                            <a href="javascript:void(0);" class="dc-btn">Book Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Rated End -->
+    <!-- Mobile App Start -->
+    <!-- Mobile App End -->
+    <!-- Latest Articles Start -->
+    <!--Skills Start End-->
 </main>
 <!-- Main End -->
-<div th:replace="fragments/common :: m_footer"></div>
+<div th:replace="fragments/m_common :: m_footer"></div>

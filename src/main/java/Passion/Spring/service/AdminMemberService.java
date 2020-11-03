@@ -49,6 +49,7 @@ public class AdminMemberService
         memberRepository.save(member);
     }
 
+
     public void deleteByNo(Long no)
     {
         memberRepository.deleteByNo(no);

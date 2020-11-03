@@ -92,6 +92,35 @@
                                 </div>
                             </td>
                         </tr>
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">LATITUDE(위도)</td>
+                            <td width="90%" align="left" th:text="${hospital.get().getLatitude()}">김갑수
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">Hardness(경도)</td>
+                            <td width="90%" align="left" th:text="${hospital.get().getHardness()}">김갑수
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+                        <div  type="hidden" id="map" name="map" style="width:255px; height: 255px;     padding: 5px;
+    display: block;" ></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	df09703067e83f73fb2b30b9796c0d31"></script>
+                        <script th:inline="javascript">
+                            var latitude = [[${hospital.get().getLatitude()}]];
+                            var hardness = [[${hospital.get().getHardness()}]];
+                            var container = document.getElementById('map');
+                            var options = {
+                                center: new kakao.maps.LatLng(latitude,hardness),
+                                level: 3
+                            };
+
+                            var map = new kakao.maps.Map(container, options);
+                        </script>
 
 
 

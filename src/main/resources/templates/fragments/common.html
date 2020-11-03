@@ -20,8 +20,9 @@
         <!-- Custom styles for this template-->
         <link href="/admin-template/css/sb-admin.css" rel="stylesheet">
     </head>
+
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    <!-- Navigation-->
+        <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
         <a class="navbar-brand" href="index.html">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,9 +61,15 @@
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Member">
-                    <a class="nav-link" href="/admin/board/list">
+                    <a class="nav-link" href="/admin/board/list1">
                         <i class="fa fa-fw fa-table"></i>
                         <span class="nav-link-text">Board</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Member">
+                    <a class="nav-link" href="/admin/disease/list">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Disease</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Member">
@@ -134,231 +141,13 @@
     <script src="/admin-template/js/sb-admin-datatables.min.js"></script>
     <script src="/admin-template/js/sb-admin-charts.min.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>
 </div>
 
 
 
-<!-- main header/footer -->
-<div th:fragment="m_header">
-    <!doctype html>
-    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-    <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-    <!--[if gt IE 8]><!-->   <html class="no-js" lang=""> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BootStrap HTML5 CSS3 Theme</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/main-template/HTML/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/normalize.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/fontawesome/fontawesome-all.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/linearicons.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/themify-icons.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/fullcalendar.min.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/slick.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/jquery-ui.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/prettyPhoto.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/chosen.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/main.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/responsive.css">
-    <link rel="stylesheet" href="/main-template/HTML/css/transitions.css">
-    <script src="/main-template/HTML/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-</head>
-<body class="dc-home dc-homevtwo">
-<style type="text/css">
-    #size1 {font-size:20px;}
-    #size2 {font-size:40px;}
-    #size3 {color:white;}
-    :root {--themecolor:# !important;}
-</style>
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-<!-- Preloader Start -->
-<div class="preloader-outer">
-    <div class="wt-preloader-holder">
-        <div class="wt-loader"></div>
-    </div>
-</div>
-<!-- Preloader End -->
-<!-- Wrapper Start -->
-<div id="dc-wrapper" class="dc-wrapper dc-haslayout">
-    <!-- Header Start -->
-    <header id="dc-header" class="dc-header dc-headervtwo dc-haslayout">
-        <div class="dc-topbar">
-            <div class="container">
-            </div>
-        </div>
-        <div class="dc-navigationarea">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                        <strong class="dc-logo"><a href="index.html"><img src="images/로고.png" alt="company logo here"></a></strong>
-                        <div class="dc-rightarea">
-                            <nav id="dc-nav" class="dc-nav navbar-expand-lg">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="lnr lnr-menu"></i>
-                                </button>
-                                <div class="collapse navbar-collapse dc-navigation" id="navbarNav">
-                                    <ul class="navbar-nav">
-                                        <li class="menu-item-has-children page_item_has_children ">
-                                            <a href="healthforum.html">Q&A 게시판</a>
-                                        </li>
-                                        <li class="menu-item-has-children page_item_has_children">
-                                            <a href="searchresultlistv1.html">병원 리스트</a>
-                                        </li>
-                                        <li class="menu-item-has-children page_item_has_children">
-                                            <a href="diseaselist.html">질병 리스트</a>
-                                        </li>
 
-                                        <li class="menu-item-has-children page_item_has_children dc-navactive">
-                            </nav>
-                            <div class="dc-loginarea">
-                                <div class="dc-loginoption">
-                                    <a href="loginpage.html"><div id="size3">로그인</div></a>
-                                    <div class="dc-loginformhold">
-                                    </div>
-                                </div>
-                                <a href="register.html" class="dc-btn"><div id="size1">회원가입</div></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-
-</div>
-</div>
-
-
-<div th:fragment="m_footer">
-    <footer id="dc-footer" class="dc-footer dc-haslayout">
-        <div class="dc-footertopbar">
-            <div class="container">
-                <div class="row justify-content-center align-self-center">
-                    <div class="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-8 push-lg-2">
-                        <div class="dc-footer-call-email">
-                            <div class="dc-callinfoholder">
-                                <figure class="dc-callinfoimg">
-                                    <img src="images/로고아이콘.png" alt="img description">
-                                </figure>
-                                <div class="dc-callinfocontent">
-                                    <h3><span>문의 전화</span> <a href="javascript:void(0);">010-7777-7777</a></h3>
-                                </div>
-                            </div>
-                            <div class="dc-callinfoholder dc-mailinfoholder">
-                                <figure class="dc-callinfoimg">
-                                    <img src="images/로고아이콘.png" alt="img description">
-                                </figure>
-                                <div class="dc-callinfocontent">
-                                    <h3><span>문의 이메일</span> <a href="mailto:Passion@gmail.com">Passion@gmail.com</a></h3>
-                                </div>
-                            </div>
-                            <span class="dc-or-text">- OR -</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="dc-fthreecolumns">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 float-left">
-                        <div class="dc-fcol dc-widgetcontactus">
-                            <strong class="dc-logofooter"><a href="index.html"><img src="images/로고.png" alt="company logo here"></a></strong>
-                            <div class="dc-footercontent">
-                                <div class="dc-description">
-                                    <p> 홈페이지 찾아주셔서 감사합니다 <a href="javascript:void(0)" class="dc-detailsinfo dc-detailsinfofooter">...</a></p>
-                                </div>
-                                <ul class="dc-footercontactus">
-                                    <li><address><i class="lnr lnr-location"></i> 서울특별시 노원구 초안산로 12</address></li>
-                                    <li><a href="javascript:void(0)"><i class="lnr lnr-envelope"></i> Passion@gmail.com</a></li>
-                                    <li><span><i class="lnr lnr-phone-handset"></i> 02-939-1234</span></li>
-                                </ul>
-                                <div class="dc-fsocialicon">
-                                    <ul class="dc-simplesocialicons">
-                                        <li class="dc-facebook"><a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="dc-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="dc-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li class="dc-googleplus"><a href="javascript:void(0);"><i class="fab fa-google-plus-g"></i></a></li>
-                                        <li class="dc-rss"><a href="javascript:void(0);"><i class="fas fa-rss"></i></a></li>
-                                        <li class="dc-youtube"><a href="javascript:void(0);"><i class="fab fa-youtube"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer End -->
-                </div>
-                <!-- Popup Start-->
-                <div class="modal fade dc-offerpopup" tabindex="-1" role="dialog" id="freequery">
-                    <div class="modal-dialog" role="document">
-                        <div class="dc-modalcontent modal-content">
-                            <div class="dc-popuptitle">
-                                <h3>Give Category to Your Query</h3>
-                                <a href="javascript;void(0);" class="dc-closebtn close"><i class="lnr lnr-cross" data-dismiss="modal" aria-label="Close"></i></a>
-                            </div>
-                            <div class="modal-body">
-                                <form class="dc-formtheme dc-formhelp">
-                                    <fieldset>
-                                        <div class="form-group">
-                        <span class="dc-select">
-                           <select data-placeholder="Select Category*" name="Category*">
-                              <option value="Country">Select services Category*</option>
-                              <option value="Country">Cosmetic Surgeon</option>
-                              <option value="Country">Eye Specialist</option>
-                              <option value="Country">Gastroenterologist</option>
-                              <option value="Category">General Physician</option>
-                           </select>
-                        </span>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="search" value="" class="form-control" placeholder="Title Your Query*" required="">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" placeholder="Type Your Query*"></textarea>
-                                        </div>
-                                        <div class="form-group dc-btnarea">
-                                            <a href="javascript:void(0);" class="dc-btn">Ask Free Query</a>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Popup End-->
-                <script src="/main-template/HTML/js/vendor/jquery-3.3.1.js"></script>
-                <script src="/main-template/HTML/js/vendor/jquery-library.js"></script>
-                <script src="/main-template/HTML/js/vendor/bootstrap.min.js"></script>
-                <script src="/main-template/HTML/js/moment.min.js"></script>
-                <script src="/main-template/HTML/js/fullcalendar.min.js"></script>
-                <script src="/main-template/HTML/js/owl.carousel.min.js"></script>
-                <script src="/main-template/HTML/js/chosen.jquery.js"></script>
-                <script src="/main-template/HTML/js/scrollbar.min.js"></script>
-                <script src="/main-template/HTML/js/jquery-ui.js"></script>
-                <script src="/main-template/HTML/js/prettyPhoto.js"></script>
-                <script src="/main-template/HTML/js/jquery-ui.js"></script>
-                <script src="/main-template/HTML/js/slick.min.js"></script>
-                <script src="/main-template/HTML/js/appear.js"></script>
-                <script src="/main-template/HTML/js/jRate.js"></script>
-                <script src="/main-template/HTML/js/main.js"></script>
-                </body>
-                </html>
-
-</div>
 
 
 </body>

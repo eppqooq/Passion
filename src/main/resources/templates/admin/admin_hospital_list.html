@@ -43,7 +43,7 @@
                         <tbody>
                         <tr th:each = "hospital : ${hospitals}">
                             <td th:text="${hospital.no}">NO</td>
-                            <td> <a th:href="@{/admin/hospital/view(no=${hospital.no})}" th:text="${hospital.name}"> NAME </a></td>
+                            <td> <a th:href="@{/admin/hospital/view1(no=${hospital.no})}" th:text="${hospital.name}"> NAME </a></td>
                             <td th:text="${hospital.location}">LOCATION</td>
                             <td th:text="${hospital.information1}">INFORMATION1</td>
                             <td th:text="${hospital.tel}">TEL</td>

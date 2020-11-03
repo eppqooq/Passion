@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<style>
+    .dc-widgettitle {
+        float: left;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 4px 4px 0 0;
+        background: #3fabf3 !important;
+    }
+    .dc-navdocsingletab li a {
+        color: #767676 !important;
+        display: block;
+        font-size: 14px;
+        padding: 0 30px;
+        font-weight: 500;
+        line-height: 38px;
+        border: 1px solid #eee;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 4px 4px 0 0;
+    }
+</style>
+<div th:replace="fragments/m_common :: m_header"></div>
+<style>
+    .dc-btn{
+        min-width: 100px;
+        height : 48px;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        border: 2px solid;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: capitalize;
+        color: var(--terthemecolor);
+        font: 400 14px/46px 'Poppins', Arial, Helvetica, sans-serif;
+        border-color: var(--themecolor);
+    }
+</style>
+
+    <!-- Home Banner End -->
+    <!-- breadcrumbarea start -->
+    <div class="dc-breadcrumbarea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ol class="dc-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Registration</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumbarea End -->
+    <!--Main Start-->
+    <main id="dc-main" class="dc-main dc-haslayout dc-innerbgcolor">
+        <!--Register Form Start-->
+        <div class="dc-haslayout dc-main-section">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 push-lg-2">
+                        <div class="dc-registerformhold">
+                            <div class="dc-registerformmain">
+                                <div class="dc-registerhead">
+                                    <div class="dc-title">
+                                        <h3>회원가입</h3>
+                                    </div>
+                                    <div class="dc-description">
+                                        <p>아래의 필수약관에 대한 안내를 반드시 읽고 필수약관에 동의해야 <br>서비스 이용이 가능합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="dc-joinforms">
+
+                                    <form class="dc-formtheme dc-formregister" method="post" action="/idCheck">
+                                        <fieldset class="dc-registerformgroup">
+                                            <div class="form-group form-group-half">
+                                                <input type="text" name="id"  class="" placeholder=" ID를 입력하세요. ">
+                                                <!-- <a href="/idCheck" class="dc-btn">중복확인</a> -->
+                                            </div>
+                                            <br><br><br>
+                                            <div class="form-group form-group-half">
+                                                <input type="password" name="password" class="form-control" placeholder="비밀번호">
+                                            </div>
+                                            <div class="form-group form-group-half">
+                                                <input type="password" name="password1" class="form-control" placeholder="비밀번호 재확인">
+                                            </div>
+
+                                            <br><br><br>
+
+                                            <div class="form-group form-group-half">
+                                                <input type="name" name="name" class="form-control" placeholder="이름">
+                                            </div>
+                                            <div class="form-group form-group-half">
+                                                <input type="date" name="birthday" class="form-control" placeholder="생년월일">
+                                            </div>
+
+                                            <br><br><br>
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="이메일">
+                                            </div>
+                                            <br><br><br>
+
+                                            <!--
+                                            <div class="form-group form-group-half">
+                                                <input type="text" name="zipcode"  class="" placeholder=" 우편번호"> 	<a href="index.html" class="dc-btn">우편번호</a>
+                                            </div>
+                                            -->
+
+                                            <div class="form-group">
+                                                <input type="text" name="address" class="form-control" placeholder="주소">
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="dc-termsconditions">
+                                            <div class="dc-checkboxholder">
+                                       <span class="dc-checkbox">
+                                          <input id="termsconditions" type="checkbox" name="termsconditions" value="termsconditions" checked>
+                                          <label for="termsconditions"><span>개인(신용)정보 수집·이용에 대한 동의 (필수) <a href="./terms01.html"> 약관 보기</a></span></label>
+                                       </span>
+                                                <span class="dc-checkbox">
+                                          <input id="termsconditions2" type="checkbox" name="termsconditions2" value="termsconditions2" checked>
+                                          <label for="termsconditions2"><span>내 손 안의 병원 서비스 이용 동의 (필수)<a href="./terms02.html"> 약관 보기</a></span></label>
+                                       </span>
+                                                <div class="row justify-content-md-center">
+                                                    <input type="submit" value="가입하기">&nbsp;
+                                                </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="dc-registerformfooter">
+                                <span>회원가입이 되어있나요? <a href="/login">로그인</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Register Form End-->
+        <!--Skills Start-->
+        <div th:replace="fragments/m_common :: m_footer"></div>

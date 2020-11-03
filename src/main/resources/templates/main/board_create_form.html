@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<style>
+    .dc-widgettitle {
+        float: left;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 4px 4px 0 0;
+        background: #3fabf3 !important;
+    }
+    .dc-navdocsingletab li a {
+        color: #767676 !important;
+        display: block;
+        font-size: 14px;
+        padding: 0 30px;
+        font-weight: 500;
+        line-height: 38px;
+        border: 1px solid #eee;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 4px 4px 0 0;
+    }
+</style>
+<div th:replace="fragments/m_common :: m_header"></div>
+<!-- Header End -->
+<!-- Home Banner Start -->
+<div class="dc-innerbanner-holder dc-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="dc-innerbanner">
+                    <form class="dc-formtheme dc-form-advancedsearch dc-innerbannerform">
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="text" name="search" class="form-control" placeholder="Search doctors, clinics, hospitals, etc.">
+                            </div>
+                            <div class="form-group">
+                                <div class="dc-select">
+                                    <select class="chosen-select locations" data-placeholder="Country" name="locations">
+                                        <option value="Location">Location*</option>
+                                        <option value="United State">United State</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="England">England</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dc-btnarea">
+                                <a href="javascript:void(0);" class="dc-btn">Search</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dc-advancedsearch-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="dc-advancedsearchs">
+                        <form class="dc-formtheme dc-form-advancedsearchs">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Availability">Availability</option>
+                                            <option value="Availability">morning</option>
+                                            <option value="Availability">evening</option>
+                                            <option value="Availability">night</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Fee">Consultation Fee</option>
+                                            <option value="Fee">20 $</option>
+                                            <option value="Fee">22 $</option>
+                                            <option value="Fee">18 $</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-typeoptions">
+                                        <span>Type:</span>
+                                        <div class="dc-select">
+                                            <select>
+                                                <option value="Show">Show All</option>
+                                                <option value="Show">Neurosurgeon</option>
+                                                <option>Dermatologists</option>
+                                                <option>Gastroenterologists</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                 <span class="dc-checkbox">
+                                    <input id="dc-show" type="checkbox" name="show">
+                                    <label for="dc-show">Show Nearest Only</label>
+                                 </span>
+                                </div>
+                                <div class="dc-btnarea">
+                                    <a href="javascript:void(0);" class="dc-btn dc-resetbtn">Reset Filters</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home Banner End -->
+<!-- breadcrumbarea start -->
+<div class="dc-breadcrumbarea">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ol class="dc-breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li>게시판 글쓰기</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbarea End -->
+<!--Main Start-->
+<main id="dc-main" class="dc-main dc-haslayout dc-innerbgcolor">
+    <!--Register Form Start-->
+    <div class="dc-haslayout dc-main-section">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 push-lg-2">
+                    <div class="dc-registerformhold">
+                        <div class="dc-registerformmain">
+                            <div class="dc-registerhead">
+                                <h4>글쓰기</h4><br>
+                            <form method="post" action="/board/create">
+                                    <div class="form-group">
+                                        <div class="dc-select" style="width:200px !important; margin-right:70px !important;">
+                                            <select class="chosen-select locations"  data-placeholder="Country" name="boardkind">
+                                                <option value="게시판">게시판</option>
+                                                <!--<option value="게시판">게시판</option>-->
+
+                                            </select>
+                                        </div>
+                                        <div class="dc-select" style=width:200px !important;>
+                                            <select class="chosen-select locations" data-placeholder="Country" name="kind_no">
+                                                <option value="1">진료 과목*</option>
+                                                <option value="2">성형 외과 </option>
+                                                <option value="3">안과 </option>
+                                                <option value="4">신경외과</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="title" class="form-control" placeholder="제목" required="">
+                                    <textarea input type="textarea" name="content" class="form-control" placeholder="글내용"  ></textarea>
+                                    <input type="file" name="FileName" class="form-control" style="margin-bottom:30px !important;">
+                                    <div class="" >
+
+                                        <input type="submit" value="올리기" style="cursor:pointer !important;" class="dc-btn do-login-button">
+                                        <a href="/board/list" class="dc-btn">뒤로가기</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Register Form End-->
+    <!--Skills Start-->
+    <div th:replace="fragments/m_common :: m_footer"></div>

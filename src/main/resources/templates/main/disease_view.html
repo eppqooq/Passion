@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<style>
+    .dc-widgettitle {
+        float: left;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 4px 4px 0 0;
+        background: #3fabf3 !important;
+    }
+    .dc-navdocsingletab li a {
+        color: #767676 !important;
+        display: block;
+        font-size: 14px;
+        padding: 0 30px;
+        font-weight: 500;
+        line-height: 38px;
+        border: 1px solid #eee;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 4px 4px 0 0;
+    }
+</style>
+<div th:replace="fragments/m_common :: m_header"></div>
+    <!-- Header End -->
+    <!-- Home Slider Start -->
+    <div class="dc-innerbanner-holder dc-haslayout">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="dc-innerbanner">
+                        <form class="dc-formtheme dc-form-advancedsearch dc-innerbannerform">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input type="text" name="search" class="form-control" placeholder="병원이름, 진료과목 검색">
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select class="chosen-select locations" data-placeholder="Country" name="locations">
+                                            <option value="Location">지역검색*</option>
+                                            <option value="United State">United State</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="England">England</option>
+                                            <option value="Switzerland">Switzerland</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="dc-btnarea">
+                                    <a href="javascript:void(0);" class="dc-btn">Search</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dc-advancedsearch-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="dc-advancedsearchs">
+                            <form class="dc-formtheme dc-form-advancedsearchs">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="dc-select">
+                                            <select>
+                                                <option value="Availability">Availability</option>
+                                                <option value="Availability">morning</option>
+                                                <option value="Availability">evening</option>
+                                                <option value="Availability">night</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="dc-select">
+                                            <select>
+                                                <option value="Fee">Consultation Fee</option>
+                                                <option value="Fee">20 $</option>
+                                                <option value="Fee">22 $</option>
+                                                <option value="Fee">18 $</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="dc-typeoptions">
+                                            <span>Type:</span>
+                                            <div class="dc-select">
+                                                <select>
+                                                    <option value="Show">Show All</option>
+                                                    <option value="Show">Neurosurgeon</option>
+                                                    <option>Dermatologists</option>
+                                                    <option>Gastroenterologists</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                 <span class="dc-checkbox">
+                                    <input id="dc-show" type="checkbox" name="show">
+                                    <label for="dc-show">Show Nearest Only</label>
+                                 </span>
+                                    </div>
+                                    <div class="dc-btnarea">
+                                        <a href="javascript:void(0);" class="dc-btn dc-resetbtn">Reset Filters</a>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Home Slider End -->
+    <!-- breadcrumbarea start -->
+    <div class="dc-breadcrumbarea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ol class="dc-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>질병 검색</li>
+                        <li>질병 상세정보</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumbarea End -->
+    <!-- Main Start -->
+    <main id="dc-main" class="dc-main dc-haslayout">
+        <!-- About Welcome Start -->
+        <!-- About Welcome Start -->
+        <div class="dc-haslayout dc-main-section">
+            <!-- User Listing Start-->
+            <div class="container">
+                <div class="row">
+                    <div id="dc-twocolumns" class="dc-twocolumns dc-haslayout">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 float-left">
+                            <div class="dc-docsingle-header">
+                                <figure class="dc-docsingleimg">
+
+                                    <div id="map" style="width:255px; height: 255px;     padding: 5px; display: block;"></div>
+                                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=   df09703067e83f73fb2b30b9796c0d31"></script>
+                                    <script>
+                                        var container = document.getElementById('map');
+                                        var options = {
+                                            center: new kakao.maps.LatLng(37.648950,127.062982),
+                                            level: 3
+                                        };
+
+                                        var map = new kakao.maps.Map(container, options);
+                                    </script>
+
+                                </figure>
+                                <div class="dc-docsingle-content">
+                                    <div class="dc-title">
+                                        <a href="javascript:void(0)" class="dc-docstatus">순환기내과, 소아청소년과, 흉부외과</a>
+                                        <h2><a href="javascript:void(0);">부정맥</a> <i class="fa fa-award dc-awardtooltip"><em></em></i><em></em></h2>
+                                        <ul class="dc-docinfo">
+                                            <li>
+                                                <em>진단 :대부분의 빈혈이 의심되면 병원에서는 환자의 병력, 신체검사와 혈액검사, 전체혈구계산(CBC)를 포함하는 검사를 통해 진단을 함.</em>
+                                            </li>
+                                        </ul>
+                                        <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                    </div>
+                                    <div class="dc-description">
+                                        <p>종류: 철결핍성 빈혈, 비타민 결핍성 빈혈, 만성질환 빈혈, 재생불량성 빈혈, 골수 질환과 관련된 빈혈, 용혈성 빈혈, 기타 다른 종류의 빈혈</p>
+                                        <br>
+                                    </div>
+                                    <div class="dc-btnarea">
+                                        <a href="javascript:void(0);" class="dc-btn" data-toggle="modal" data-target="#appointment">근처 병원 확인하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dc-docsingle-holder">
+                                <ul class="dc-navdocsingletab nav navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="active" id="locations-tab" data-toggle="tab" href="#locations">증상</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content dc-haslayout">
+
+                                    <div class="dc-contentdoctab dc-location-holder tab-pane fade active show" id="locations">
+                                        <div class="dc-aboutdoc dc-aboutinfo">
+                                            <div class="dc-infotitle">
+                                                <h3>부정맥 증상</h3>
+                                            </div>
+                                            <div class="dc-description"><p>
+                                                1. 두근거림(심계항진)<br>
+                                                일반적으로 사람들은 자기 자신의 심박동을 인지하지 못합니다. 갑자기 어떤 일로 놀랐을 때처럼, 부정맥의 종류에 따라 빠르거나 느린 심박동을 본인이 느끼는 것입니다.<br>
+                                                2. 맥이 빠짐<br>
+                                                부정맥이 갑자기 짧게 나타날 경우 환자들은 맥박이 한두 번 갑자기 건너뛰거나 빠진 듯한 느낌이 들 수 있습니다.<br>
+                                                3. 어지러움, 실신, 피로감<br>
+                                                부정맥이 발생하면 정상적인 심장 박동에 비해 심박출량이 줄어듭니다. 환자들은 이때 머리나 몸 전체로 혈액공급이 원활하지 못하여지면서 어지러운 느낌을 느끼거나 실신을 일으킬 수 있으며, 이러한 상태가 지속적으로 반복되면 피로감을 느끼기도 합니다.<br>
+                                                4. 가슴통증, 흉부 불쾌감<br>
+                                                부정맥이 갑자기 나타나는 경우 환자들은 가슴의 통증이나 불쾌감을 느낄 수 있습니다. 한편, 부정맥이 협심증이나 심근경색 등 심장의 혈액순환장애로 인해 발생하는 경우에는 협심증이나 심근경색 자체로 인해 가슴을 심하게 조이는 듯 뻐근한 심한 흉통을 느끼기도 합니다.<br>
+                                                5. 호흡곤란<br>
+                                                부정맥이 나타날 때 환자는 갑자기 숨을 쉬기 힘들어지는 느낌이 들 수 있으며, 경우에 따라서는 실제로 호흡곤란이 발생할 수도 있습니다.<br>
+                                                6. 급사<br>
+                                                부정맥이 심하게 나타나서 심장이 제대로 혈액을 내보내지 못하는 상황이 발생하거나 심정지가 발생할 경우 환자가 사망할 수도 있습니다.<br>
+                                            </p>
+                                                <p>등등 어쩌구 저쩌구</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 float-left">
+                            <aside id="dc-sidebar" class="dc-sidebar dc-sidebar-grid float-left mt-xl-0">
+                                <div class="dc-widget dc-onlineoptions">
+                                    <figure class="dc-onlinuserimg">
+                                        <img src="/main-template/HTML/images/큐앤에이.png">
+                                        <figcaption><span>Q&A</span></figcaption>
+                                    </figure>
+                                    <div class="dc-onlineoption-content">
+                                        <div class="dc-title">
+                                            <h3><span>질문하러 게시판으로 가기</span> Go to Q&A Board</h3>
+                                        </div>
+                                        <div class="dc-btnarea">
+                                            <a href="healthforum.html" class="dc-btn dc-btnactive">Ask For Information</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dc-widget dc-reportform-holder">
+                                </div>
+                                <div class="dc-widget dc-mobileappoptions">
+                                    <figure class="dc-appimgs">
+                                        <img src="/main-template/HTML/images/앱.png">
+                                    </figure>
+                                    <div class="dc-mobileapp-content">
+                                        <div class="dc-title">
+                                            <h3><span>Care on the GO</span> Get Mobile App</h3>
+                                        </div>
+                                        <div class="dc-description">
+                                            <p>지금 당장 손스피럴 모바일 앱을 다운받아보세요!</p>
+                                        </div>
+                                        <div class="dc-appemail-form">
+                                            <input type="email" name="email" value="" class="form-control" placeholder="Email ID" required="">
+                                            <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <figure class="dc-searchresultad">
+                                    <a href="javascript:void(0);">
+                                        <img src="/main-template/HTML/images/인덕pink.png" alt="img description">
+                                    </a>
+                                    <span> </span>
+                                </figure>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- User Listing End-->
+        </div>
+        <!-- Emerging Clients End -->
+        <!--Skills Start-->
+        <!--Skills End-->
+    </main>
+    <!-- Main End -->
+    <!-- Footer Start -->
+    <div th:replace="fragments/m_common :: m_footer"></div>

@@ -1,0 +1,115 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<style>
+    .mycolor1 {
+        background-color:black; color:white;
+    }
+    .mycolor2
+    {
+        background-color:lightgray;
+    }
+    form {
+        display: block;
+        margin-top: 0em;
+        margin-block-end: 0em;
+    }
+    button {
+
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        cursor:pointer;
+
+        background-color:black; color:white;
+    }
+
+</style>
+<div th:replace="fragments/common :: header"></div>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Diseases</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Disease Data</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">NO</td>
+                            <td width="90%" align="left" th:text="${disease.get().getNo()}">1
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">제목</td>
+                            <td width="90%" align="left" th:text="${disease.get().getTitle()}">1
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">요약</td>
+                            <td width="90%" align="left" th:text="${disease.get().getSmall()}">1
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">내용</td>
+                            <td width="90%" align="left" th:text="${disease.get().getContent()}">1
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="10%" class="mycolor2" style="vertical-align:middle">사진</td>
+                            <td width="90%" align="left" th:text="${disease.get().getPicture()}">1
+                                <div class="form-inline">
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+                </div></div></div>
+
+    </div>
+</div>
+</div>
+</div>
+
+</table>
+
+
+
+
+<div align="center">
+
+    <a th:href="@{/admin/disease/edit(no=${disease.get().getNo()})}" class="btn btn-sm mycolor1">수정</a>&nbsp;
+    <form class="btn btn-sm " style="margin-left:-4px;"   action="/admin/disease/delete" method="post">
+        <input type="hidden" class="btn btn-sm mycolor1" name="no" th:value="${disease.get().getNo()}" />
+        <button class="link-delete-article"  type="submit" onClick="return confirm('삭제할까요 ?');">삭제</button>
+    </form>
+    <input type="button" value="이전화면" style="cursor:pointer;" class="btn btn-sm mycolor1" onClick="history.back();">
+</div>
+
+
+
+
+
+
+
+
+
+<div th:replace="fragments/common :: footer"></div>

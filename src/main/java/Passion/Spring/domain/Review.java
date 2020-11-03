@@ -10,9 +10,12 @@ import java.util.Date;
 public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
+
     private Long member_no;
     private Long hospital_no;
+
     private String content;
+
     private Integer score;
     private String create_day;
     private String update_day;

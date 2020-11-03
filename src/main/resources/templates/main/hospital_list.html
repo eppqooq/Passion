@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<div th:replace="fragments/m_common :: m_header"></div>
+
+<div class="dc-innerbanner-holder dc-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="dc-innerbanner">
+                    <form class="dc-formtheme dc-form-advancedsearch dc-innerbannerform">
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="text" name="search" class="form-control" placeholder="
+병원이름, 진료과목 검색">
+                            </div>
+                            <div class="form-group">
+                                <div class="dc-select">
+                                    <select>
+                                        <option value="Location">지역검색*</option>
+                                        <option value="United State">노원</option>
+                                        <option value="Canada"></option>
+                                        <option value="England">England</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dc-btnarea">
+                                <a href="javascript:void(0);" class="dc-btn">검색</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>검색</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dc-advancedsearch-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="dc-advancedsearchs">
+                        <form class="dc-formtheme dc-form-advancedsearchs">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Availability">운영시간</option>
+                                            <option value="Availability">아침</option>
+                                            <option value="Availability">점심</option>
+                                            <option value="Availability">밤</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Fee">진료비</option>
+                                            <option value="Fee">20 $</option>
+                                            <option value="Fee">22 $</option>
+                                            <option value="Fee">18 $</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-typeoptions">
+                                        <span>타입:</span>
+                                        <div class="dc-select">
+                                            <select>
+                                                <option value="Show">모두 표시</option>
+                                                <option value="Show">Neurosurgeon</option>
+                                                <option>Dermatologists</option>
+                                                <option>Gastroenterologists</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                 <span class="dc-checkbox">
+                                    <input id="dc-show" type="checkbox" name="show">
+                                    <label for="dc-show">가까운 항목 만 표시</label>
+                                 </span>
+                                </div>
+                                <div class="dc-btnarea">
+                                    <a href="javascript:void(0);" class="dc-btn dc-resetbtn">필터 재설정</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home Slider End -->
+<!-- breadcrumbarea start -->
+<div class="dc-breadcrumbarea">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ol class="dc-breadcrumb">
+                    <li><a href="index.html">홈</a></li>
+                    <li>병원 검색</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbarea End -->
+<!-- Main Start -->
+<main id="dc-main" class="dc-main dc-haslayout">
+    <!-- About Welcome Start -->
+    <!-- About Welcome Start -->
+    <div class="dc-haslayout dc-main-section">
+        <!-- User Listing Start-->
+        <div class="container">
+            <div class="row">
+                <div id="dc-twocolumns" class="dc-twocolumns dc-haslayout">
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 float-left">
+                        <div class="dc-searchresult-holder">
+                            <div class="dc-searchresult-head">
+                                <div class="dc-title"><h4><strong th:text="${totalHospitalCount}">1560</strong>개의 병원 정보</h4></div>
+                                <div class="dc-rightarea">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Sort By:">정렬 기준:</option>
+                                        </select>
+                                    </div>
+                                    <div class="dc-gridlist-option">
+                                        <a href="javascript:void(0);"><i class="ti-layout-grid2"></i></a>
+                                        <a href="javascript:void(0);" class="dc-linkactive"><i class="ti-view-list"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dc-searchresult-grid dc-searchresult-list">
+
+<!--                                <tr th:each = "hospital : ${hospitals}">-->
+<!--                                    <td th:text="${hospital.no}">NO</td>-->
+<!--                                    <td> <a th:href="@{/admin/hospital/view(no=${hospital.no})}" th:text="${hospital.name}"> NAME </a></td>-->
+
+
+
+                                <div class="dc-docpostholder" th:each = "helper : ${helpers}">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/백병원.png"  alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">대학병원</a>
+                                            <h3 th:text="${helper.hospital.name}">인제대학교 상계백병원  <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>대표전화 : 02-950-1114</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em><bold th:text="${helper.getReviewCount()}">2100</bold> Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation dc-doclocationvtwo">
+                                            <span th:text="${helper.hospital.location}"><i class="ti-direction-alt"></i> 서울특별시 노원구 상계6.7동 동일로 1342</span>
+                                            <span th:text="${helper.hospital.information1}"><i class="ti-calendar"></i> 월, 화, 수, 목, 금, 토 <em class="dc-dayon">일</em></span>
+                                            <div class="dc-btnarea">
+                                                <a th:href="@{/hospital/view(no=${helper.hospital.no})}" class="dc-btn">자세히보기</a>
+                                                <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dc-docpostholder">
+                                    <figure class="dc-docpostimg">
+                                        <img src="/main-template/HTML/images/백병원.png"  alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="dc-docpostcontent">
+                                        <div class="dc-title">
+                                            <a href="javascript:void(0)" class="dc-docstatus">대학병원</a>
+                                            <h3><a href="javascript:void(0);">인제대학교 상계백병원 </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
+                                            <ul class="dc-docinfo">
+                                                <li>
+                                                    <em>대표전화 : 02-950-1114</em>
+                                                </li>
+                                                <li>
+                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="dc-doclocation dc-doclocationvtwo">
+                                            <span><i class="ti-direction-alt"></i> 서울특별시 노원구 상계6.7동 동일로 1342</span>
+                                            <span><i class="ti-calendar"></i> 월, 화, 수, 목, 금, 토 <em class="dc-dayon">일</em></span>
+                                            <div class="dc-btnarea">
+                                                <a href="doctorsingle.html"class="dc-btn">자세히보기</a>
+                                                <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <nav class="dc-pagination">
+                                    <ul>
+                                        <li class="dc-prevpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-left"></i></a></li>
+                                        <li><a href="javascrip:void(0);">1</a></li>
+                                        <li><a href="javascrip:void(0);">2</a></li>
+                                        <li><a href="javascrip:void(0);">3</a></li>
+                                        <li><a href="javascrip:void(0);">4</a></li>
+                                        <li><a href="javascrip:void(0);">...</a></li>
+                                        <li><a href="javascrip:void(0);">50</a></li>
+                                        <li class="dc-nextpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-right"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 float-left">
+                        <aside id="dc-sidebar" class="dc-sidebar dc-sidebar-grid float-left mt-md-0">
+                            <div class="dc-widget dc-onlineoptions">
+                                <figure class="dc-onlinuserimg">
+
+                            </div>
+                            <div class="dc-widget dc-mostsearch-holder">
+                                <div class="dc-widgettitle">
+                                    <h3>가장 많이 찾는 진료과목</h3>
+                                </div>
+                                <div class="dc-widgetcontent">
+                                    <ul class="dc-mostsearch-content">
+                                        <li><a href="javascript:void(0);">내과</a></li>
+                                        <li><a href="javascript:void(0);">외과</a></li>
+                                        <li><a href="javascript:void(0);">소아청소년과</a></li>
+                                        <li><a href="javascript:void(0);">정신건강의학과</a></li>
+                                        <li><a href="javascript:void(0);">정형외과</a></li>
+                                        <li><a href="javascript:void(0);">이비인후과</a></li>
+                                        <li><a href="javascript:void(0);">안과</a></li>
+                                        <li><a href="javascript:void(0);">영상의학과</a></li>
+                                        <li><a href="javascript:void(0);">치과</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dc-widget dc-mobileappoptions">
+                                <figure class="dc-appimgs">
+                                    <img src="images/앱.png">
+                                </figure>
+                                <div class="dc-mobileapp-content">
+                                    <div class="dc-title">
+                                        <h3><span>Care on the GO</span> Get Mobile App</h3>
+                                    </div>
+                                    <div class="dc-description">
+                                        <p>지금 당장 손스피럴 모바일 앱을 다운받아보세요!</p>
+                                    </div>
+                                    <div class="dc-appemail-form">
+                                        <input type="email" name="email" value="" class="form-control" placeholder="Email ID" required="">
+                                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="dc-searchresultad">
+                                <a href="javascript:void(0);">
+                                    <img src="images/인덕.png" alt="img description">
+                                </a>
+                                <span>Advertisement  770px X 90px</span>
+                            </figure>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- User Listing End-->
+    </div>
+    <!-- Emerging Clients End -->
+    <!--Skills Start-->
+    <section class="dc-haslayaout dc-footeraboutus dc-bgcolor">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="dc-widgetskills">
+                        <div class="dc-fwidgettitle">
+                            <h3>By Speciality</h3>
+                        </div>
+                        <ul class="dc-fwidgetcontent">
+                            <li><a href="javascript:void(0);">Allergy Specialist</a></li>
+                            <li><a href="javascript:void(0);">Andrologist</a></li>
+                            <li><a href="javascript:void(0);">Anesthetist</a></li>
+                            <li><a href="javascript:void(0);">Audiologist</a></li>
+                            <li><a href="javascript:void(0);">Dietitian/Nutritionist</a></li>
+                            <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="dc-widgetskill">
+                        <div class="dc-fwidgettitle">
+                            <h3>Doctors In US</h3>
+                        </div>
+                        <ul class="dc-fwidgetcontent">
+                            <li><a href="javascript:void(0);">Laproscopic Surgeon</a></li>
+                            <li><a href="javascript:void(0);">Oral And Maxillofacial Surgeon</a></li>
+                            <li><a href="javascript:void(0);">Orthopedic Surgeon</a></li>
+                            <li><a href="javascript:void(0);">Pediatric Cardiac Surgeon</a></li>
+                            <li><a href="javascript:void(0);">Pediatric Orthopedic Surgeon</a></li>
+                            <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="dc-footercol dc-widgetcategories">
+                        <div class="dc-fwidgettitle">
+                            <h3>By Categories</h3>
+                        </div>
+                        <ul class="dc-fwidgetcontent">
+                            <li><a href="javascript:void(0);">Cosmetic Surgeon</a></li>
+                            <li><a href="javascript:void(0);">Eye Specialist</a></li>
+                            <li><a href="javascript:void(0);">Gastroenterologist</a></li>
+                            <li><a href="javascript:void(0);">General Physician</a></li>
+                            <li><a href="javascript:void(0);">General Practitioner</a></li>
+                            <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                    <div class="dc-widgetbylocation">
+                        <div class="dc-fwidgettitle">
+                            <h3>By Location</h3>
+                        </div>
+                        <ul class="dc-fwidgetcontent">
+                            <li><a href="javascript:void(0);">Switzerland</a></li>
+                            <li><a href="javascript:void(0);">Canada</a></li>
+                            <li><a href="javascript:void(0);">Germany</a></li>
+                            <li><a href="javascript:void(0);">United Kingdom</a></li>
+                            <li><a href="javascript:void(0);">Japan</a></li>
+                            <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Skills End-->
+</main>
+<!-- Main End -->
+<div th:replace="fragments/m_common :: m_footer"></div>

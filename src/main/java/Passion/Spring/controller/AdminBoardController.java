@@ -19,9 +19,8 @@ public class AdminBoardController {
     AdminBoardService adminBoardService;
     public AdminBoardController(AdminBoardService adminBoardService) {
         this.adminBoardService = adminBoardService;
-        System.out.println("AdminBoardService.getClass() = " + adminBoardService.getClass());
     }
-    @GetMapping("list")
+    @GetMapping("list1")
     public String boardList(Model model)
     {
         List<Board> boards = adminBoardService.findBoards();
@@ -31,7 +30,7 @@ public class AdminBoardController {
     }
 
 
-    @GetMapping("view")
+    @GetMapping("view1")
     public String boardView(@RequestParam Long no, Model model)
     {
         Optional<Board> board = adminBoardService.findByNo(no);

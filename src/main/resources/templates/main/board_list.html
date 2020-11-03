@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<HEADER>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
+</HEADER>
+<style>
+    .dc-forumform fieldset .form-group:nth-child(2) {
+        width: 70% !important;
+    }
+
+    .dc-forumform fieldset .form-group:first-child {
+        width: 30% !important;
+    }
+    .dc-widgettitle {
+        float: left;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 4px 4px 0 0;
+        background: #3fabf3 !important;
+    }
+    .dc-navdocsingletab li a {
+        color: #767676 !important;
+        display: block;
+        font-size: 14px;
+        padding: 0 30px;
+        font-weight: 500;
+        line-height: 38px;
+        border: 1px solid #eee;
+        border-bottom: 0;
+        border-left: 0;
+        border-radius: 4px 4px 0 0;
+    }
+</style>
+<div th:replace="fragments/m_common :: m_header"></div>
+<style>
+    .dc-searchresult-head .dc-rightarea .dc-select select {
+        height: 50px !important;
+        min-width:160px;
+        padding: 0 30px 0 20px;
+    }
+    .td_article {
+        padding-left: 12px;
+        padding-right: 18px;
+    }
+    .blind {
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+    }
+    .board-number {
+        display: table-cell;
+        padding-right: 7px;
+        vertical-align: middle;
+    }
+    .board-list {
+        display: table-cell;
+        padding-top: 1px;
+        text-align:center !important;
+    }
+    .inner_number{
+        display: inline-block;
+        width: 69px;
+        margin: -2px 6px 0 -6px;
+        font-size: 11px;
+        line-height: 13px;
+        text-align: center;
+        word-break: break-all;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    .td_date {
+        color: #666;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .pers_nick_area {
+        position: relative;
+        padding: 0 !important;
+    }
+    .article-board tbody td {
+        height: 28px;
+        padding: 4px 7px;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    .list-i-img {
+        background-position: -4px -268px;
+        width: 12px;
+        height: 12px;
+        vertical-align: -1px !important;
+    }
+</style>
+
+<!-- Header End -->
+<!-- Home Slider Start -->
+<div class="dc-innerbanner-holder dc-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="dc-innerbanner">
+                    <form class="dc-formtheme dc-form-advancedsearch dc-innerbannerform">
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="text" name="search" class="form-control" placeholder="Search doctors, clinics, hospitals, etc.">
+                            </div>
+                            <div class="form-group">
+                                <div class="dc-select">
+                                    <select class="chosen-select locations" data-placeholder="Country" name="locations" style="display: none;">
+                                        <option value="Location">Location*</option>
+                                        <option value="United State">United State</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="England">England</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="dc-btnarea">
+                                <a href="javascript:void(0);" class="dc-btn">검색</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dc-advancedsearch-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="dc-advancedsearchs">
+                        <form class="dc-formtheme dc-form-advancedsearchs">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Availability">Availability</option>
+                                            <option value="Availability">morning</option>
+                                            <option value="Availability">evening</option>
+                                            <option value="Availability">night</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <select>
+                                            <option value="Fee">Consultation Fee</option>
+                                            <option value="Fee">20 $</option>
+                                            <option value="Fee">22 $</option>
+                                            <option value="Fee">18 $</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="dc-typeoptions">
+                                        <span>Type:</span>
+                                        <div class="dc-select">
+                                            <select>
+                                                <option value="Show">Show All</option>
+                                                <option value="Show">Neurosurgeon</option>
+                                                <option>Dermatologists</option>
+                                                <option>Gastroenterologists</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                 <span class="dc-checkbox">
+                                    <input id="dc-show" type="checkbox" name="show">
+                                    <label for="dc-show">Show Nearest Only</label>
+                                 </span>
+                                </div>
+                                <div class="dc-btnarea">
+                                    <a href="javascript:void(0);" class="dc-btn dc-resetbtn">Reset Filters</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home Slider End -->
+<!-- breadcrumbarea start -->
+<div class="dc-breadcrumbarea">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ol class="dc-breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>게시판</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumbarea End -->
+<!-- Main Start -->
+<main id="dc-main" class="dc-main dc-haslayout">
+    <!-- About Welcome Start -->
+    <!-- About Welcome Start -->
+    <div class="dc-haslayout dc-main-section">
+        <!-- User Listing Start-->
+        <div class="container">
+            <div class="row">
+
+                <div id="dc-twocolumns" class="dc-twocolumns dc-haslayout">
+
+
+
+                    <div class="dc-innerbanner">
+                        <form class="dc-formtheme  dc-forumform" method="post" action="/board/list">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="dc-select">
+                                        <input type="hidden" name="searchKind" value="게시판">
+                                        <select th:if="${searchKindOf == null}" class="chosen-select locations" data-placeholder="Country" name="searchKindOf" style="width: 10px;" >
+                                            <option value="제목">제목</option>
+                                            <option value="내용">내용</option>
+<!--                                            <optionvalue="United State">성형 외과 의사</option>-->
+<!--                                            <option value="Canada">안과 전문의</option>-->
+<!--                                            <option value="England">위장병 전문의</option>-->
+                                        </select>
+                                        <select th:if="${searchKindOf} == '제목'" class="chosen-select locations" data-placeholder="Country" name="searchKindOf" style="width: 10px;" >
+                                            <option value="제목">제목</option>
+                                            <option value="내용">내용</option>
+                                        </select>
+                                        <select th:if="${searchKindOf} == '내용'" class="chosen-select locations" data-placeholder="Country" name="searchKindOf" style="width: 10px;" >
+                                            <option value="내용">내용</option>
+                                            <option value="제목">제목</option>
+                                        </select>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <input type="text" name="searchText" th:value="${searchText}" class="form-control" placeholder="검색어 입력">
+                                </div>
+
+                                <div class="dc-btnarea">
+                                    <input type="submit" value="검색" style="cursor:pointer !important;" class="dc-btn do-login-button">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+
+                    <div class="dc-docsingle-holder">
+                        <div class="tab-content dc-haslayout">
+                            <div class="dc-contentdoctab dc-feedback-holder" id="feedback">
+                                <div class="dc-feedback">
+                                    <div class="dc-searchresult-head">
+
+                                        <div class=""  style="margin-bottom:-51px;"> <h4 style="padding-bottom:-30px !important; float:left !important;"></h4>
+                                            <a href="/board/create" class="dc-btn">글쓰기</a></div>
+                                        <br>
+<!--                                        <div class="dc-rightarea">-->
+
+
+<!--                                            <div class="dc-select">-->
+<!--                                                <select>-->
+<!--                                                    <option value="Sort By:">정렬 기준:</option>-->
+<!--                                                    <option value="Sort By:">마지막으로 생성됨</option>-->
+<!--                                                    <option value="Sort By:">마지막 수정</option>-->
+<!--                                                    <option value="Sort By:">알파벳순 (A-Z)</option>-->
+<!--                                                    <option value="Sort By:">알파벳순 (Z-A)</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                    </div>
+
+
+                                    <table>
+                                        <tr>
+                                            <td  class="td_article">
+                                                <div class="board-number"><div class="inner_number">글번호</div></div>
+                                                <div class="board-list" >
+                                                    <div class="inner_list">
+                                                        <a class="article"   style="text-align:center !important; " >
+                                                            제목
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="td_name">
+                                                작성자</td>
+                                            <td class="td_date">작성일</td>
+                                            <td class="td_date">조회수</td>
+
+
+                                        </tr>
+
+
+<!--                                        <tr th:each = "board : ${boards}">-->
+<!--                                            <td th:text="${board.no}">NO</td>-->
+<!--                                            <td th:text="${board.member_no}">작성자</td>-->
+<!--                                            <td> <a th:href="@{/admin/board/view(no=${board.no})}" th:text="${board.title}"> 제목 </a></td>-->
+<!--                                            <td th:text="${board.kind_no}">진료과목</td>-->
+<!--                                            <td th:text="${board.picture}">사진 이름</td>-->
+<!--                                            <td th:text="${board.views}">조회수</td>-->
+<!--                                            <td th:text="${board.create_day}">작성일</td>-->
+<!--                                            <td th:text="${board.update_day}">수정일</td>-->
+<!--                                        </tr>-->
+
+
+
+
+
+                                        <tr th:each = "fuck : ${fucking}" >
+                                            <td  class="td_article">
+                                                <div class="board-number"><div class="inner_number" th:text="${fuck.board.no}">12321</div></div>
+                                                <div class="board-list">
+                                                    <div class="inner_list">
+                                                        <a class="article" th:href="@{/board/view(no=${fuck.board.no})}" th:text="${fuck.board.title}">안녕하세요</a> &nbsp;
+
+                                                        <span class="list-i-img" th:if="${fuck.board.picture!=''}"><i class="fas fa-images"></i></span>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="td_name" th:text="${fuck.member.getId()}"> rpdud10</td>
+                                            <td class="td_date" th:text="${fuck.board.getCreate_day()}">00:17</td>
+                                            <td class="td_date" th:text="${fuck.board.getViews()}">12</td>
+                                        </tr>
+
+
+
+
+                                        <tr>
+                                            <td  class="td_article">
+                                                <div class="board-number"><div class="inner_number">10588309</div></div>
+                                                <div class="board-list">
+                                                    <div class="inner_list">
+                                                        <a class="article">안녕하세요</a> &nbsp;
+                                                        <span class="list-i-img"><i class="fas fa-images"></i></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="td_name">
+                                                rpdud10</td>
+                                            <td class="td_date">00:17</td>
+
+
+                                        </tr>
+                                    </table>
+
+                                    <!--th:href="@{/admin/disease/view1(no=${disease.no})}-->
+                                    <nav class="dc-pagination">
+                                        <ul>
+                                            <li class="dc-prevpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-left"></i></a></li>
+                                            <li><a href="">1</a></li>
+                                            <li><a href="">2</a></li>
+                                            <li><a href="">3</a></li>
+                                            <li><a href="">4</a></li>
+                                            <li><a href="">...</a></li>
+                                            <li><a href="">50</a></li>
+                                            <li class="dc-nextpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-right"></i></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="dc-widget dc-mobileappoptions" style="padding-bottom:100px !important; ">
+
+
+
+                </aside>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- User Listing End-->
+    </div>
+    <!-- Emerging Clients End -->
+    <!--Skills Start-->
+    <div th:replace="fragments/m_common :: m_footer"></div>

@@ -6,10 +6,44 @@ public class HospitalForm {
     private String location; // 위치
     private String information1;
     private String information2;
-    private String tel1;
-    private String tel2;
-    private String tel3;
+    private String tel;
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
     private Integer kind_no;
+    private String Latitude; // 위도
+    private String Hardness; //경도
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        Latitude = latitude;
+    }
+
+    public String getHardness() {
+        return Hardness;
+    }
+
+    public void setHardness(String hardness) {
+        Hardness = hardness;
+    }
 
     public Long getNo() {
         return no;
@@ -51,29 +85,6 @@ public class HospitalForm {
     }
 
 
-    public String getTel1() {
-        return tel1;
-    }
-
-    public void setTel1(String tel1) {
-        this.tel1 = tel1;
-    }
-
-    public String getTel2() {
-        return tel2;
-    }
-
-    public void setTel2(String tel2) {
-        this.tel2 = tel2;
-    }
-
-    public String getTel3() {
-        return tel3;
-    }
-
-    public void setTel3(String tel3) {
-        this.tel3 = tel3;
-    }
 
 
 }

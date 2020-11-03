@@ -22,6 +22,24 @@ public class Board {
     public String create_day;
     public String update_day;
     public Integer available;
+    public String fileName;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public Board() {
+
+    }
+
+    public Board(Board board) {
+
+    }
+
 
     public Long getNo() {
         return no;

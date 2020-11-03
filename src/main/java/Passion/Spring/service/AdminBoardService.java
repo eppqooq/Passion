@@ -4,6 +4,9 @@ import Passion.Spring.Form.BoardForm;
 import Passion.Spring.domain.Board;
 import Passion.Spring.repository.BoardRepository;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +44,7 @@ public class AdminBoardService
 //                +boardForm.getUpdateDay().toString().substring(6,8)
 //                +boardForm.getUpdateDay().toString().substring(9,10);
 
+
         board.setAvailable(boardForm.getAvailable());
         board.setContent(boardForm.getContent());
         board.setCreate_day(boardForm.getCreate_day());
@@ -51,6 +55,7 @@ public class AdminBoardService
         board.setTitle(boardForm.getTitle());
         board.setViews(boardForm.getViews());
         board.setNo(boardForm.getNo());
+        board.setFileName(boardForm.getFileName());
         return board;
     }
 //    public Member editFormMemberObject(Member member, MemberForm memberForm)

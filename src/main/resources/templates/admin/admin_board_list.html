@@ -46,7 +46,7 @@
                 <tr th:each = "board : ${boards}">
                   <td th:text="${board.no}">NO</td>
                   <td th:text="${board.member_no}">작성자</td>
-                  <td> <a th:href="@{/admin/board/view(no=${board.no})}" th:text="${board.title}"> 제목 </a></td>
+                  <td> <a th:href="@{/admin/board/view1(no=${board.no})}" th:text="${board.title}"> 제목 </a></td>
                   <td th:text="${board.kind_no}">진료과목</td>
                   <td th:text="${board.picture}">사진 이름</td>
                   <td th:text="${board.views}">조회수</td>

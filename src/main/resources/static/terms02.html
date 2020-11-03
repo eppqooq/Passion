@@ -1,0 +1,450 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->   <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Handspital</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <link rel="icon" href="/main-template/HTML/images/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="/main-template/HTML/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/normalize.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/font-awesome.min.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/fontawesome/fontawesome-all.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/linearicons.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/themify-icons.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/fullcalendar.min.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/slick.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/jquery-ui.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/prettyPhoto.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/chosen.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/main.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/responsive.css">
+   <link rel="stylesheet" href="/main-template/HTML/css/transitions.css">
+   <script src="/main-template/HTML/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<style>
+   .dc-header {
+      z-index: 10;
+      position: absolute !important;
+   }
+   .dc-topbar {
+      padding: 0px 0 !important;
+
+   }
+   .dc-headervtwo .dc-navigationarea {
+      background: var(--terthemecolor);
+      position: absolute;
+   }
+</style>
+<body class="dc-home dc-homevtwo">
+<style type="text/css">
+   #size1 {font-size:20px;}
+   #size2 {font-size:40px;}
+   #size3 {color:white;}
+   :root {--themecolor:# !important;}
+</style>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Preloader Start -->
+<div class="preloader-outer">
+   <div class="wt-preloader-holder">
+      <div class="wt-loader"></div>
+   </div>
+</div>
+<!-- Preloader End -->
+<!-- Wrapper Start -->
+
+
+
+<div id="dc-wrapper" class="dc-wrapper dc-haslayout">
+   <!-- Header Start -->
+   <header id="dc-header" class="dc-header dc-headervtwo dc-haslayout">
+      <div class="dc-topbar">
+         <div class="container">
+         </div>
+      </div>
+      <div class="dc-navigationarea">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <strong class="dc-logo"><a href="/"><img src="/main-template/HTML/images/로고.png" alt="company logo here"></a></strong>
+                  <div class="dc-rightarea">
+                     <nav id="dc-nav" class="dc-nav navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                           <i class="lnr lnr-menu"></i>
+                        </button>
+                        <div class="collapse navbar-collapse dc-navigation" id="navbarNav">
+                           <ul class="navbar-nav">
+                              <li class="menu-item-has-children page_item_has_children ">
+                                 <a href="/board/list">게시판</a>
+                              </li>
+                              <li class="menu-item-has-children page_item_has_children">
+                                 <a href="/hospital/list">병원 목록</a>
+                              </li>
+                              <li class="menu-item-has-children page_item_has_children">
+                                 <a href="/disease/list">질병 리스트</a>
+                              </li>
+
+                              <li class="menu-item-has-children page_item_has_children dc-navactive">
+                     </nav>
+                     <div class="dc-loginarea">
+                        <div class="dc-loginoption">
+                           <a href="/login"><div id="size3">로그인</div></a>
+                           <div class="dc-loginformhold">
+                           </div>
+                        </div>
+                        <a href="/register" class="dc-btn"><div id="size1">회원가입</div></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+
+
+</div>
+   <!-- Header End -->
+   <!-- Home Banner Start -->
+   <div class="dc-innerbanner-holder dc-haslayout">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+               <div class="dc-innerbanner">
+                  <form class="dc-formtheme dc-form-advancedsearch dc-innerbannerform">
+                     <fieldset>
+                        <div class="form-group">
+                           <input type="text" name="search" class="form-control" placeholder="Search doctors, clinics, hospitals, etc.">
+                        </div>
+                        <div class="form-group">
+                           <div class="dc-select">
+                              <select class="chosen-select locations" data-placeholder="Country" name="locations">
+                                 <option value="Location">Location*</option>
+                                 <option value="United State">United State</option>
+                                 <option value="Canada">Canada</option>
+                                 <option value="England">England</option>
+                                 <option value="Switzerland">Switzerland</option>
+                                 <option value="New Zealand">New Zealand</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="dc-btnarea">
+                           <a href="javascript:void(0);" class="dc-btn">Search</a>
+                        </div>
+                     </fieldset>
+                  </form>
+                  <a href="javascript:void(0);" class="dc-docsearch"><span class="dc-advanceicon"><i></i> <i></i> <i></i></span><span>Advanced <br>Search</span></a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="dc-advancedsearch-holder">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="dc-advancedsearchs">
+                     <form class="dc-formtheme dc-form-advancedsearchs">
+                        <fieldset>
+                           <div class="form-group">
+                              <div class="dc-select">
+                                 <select>
+                                    <option value="Availability">Availability</option>
+                                    <option value="Availability">morning</option>
+                                    <option value="Availability">evening</option>
+                                    <option value="Availability">night</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="dc-select">
+                                 <select>
+                                    <option value="Fee">Consultation Fee</option>
+                                    <option value="Fee">20 $</option>
+                                    <option value="Fee">22 $</option>
+                                    <option value="Fee">18 $</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <div class="dc-typeoptions">
+                                 <span>Type:</span>
+                                 <div class="dc-select">
+                                    <select>
+                                       <option value="Show">Show All</option>
+                                       <option value="Show">Neurosurgeon</option>
+                                       <option>Dermatologists</option>
+                                       <option>Gastroenterologists</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-group">
+                                 <span class="dc-checkbox">
+                                    <input id="dc-show" type="checkbox" name="show">
+                                    <label for="dc-show">Show Nearest Only</label>
+                                 </span>
+                           </div>
+                           <div class="dc-btnarea">
+                              <a href="javascript:void(0);" class="dc-btn dc-resetbtn">Reset Filters</a>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Home Banner End -->
+   <!-- breadcrumbarea start -->
+   <div class="dc-breadcrumbarea">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <ol class="dc-breadcrumb">
+                  <li><a href="../templates/main/index.html">Home</a></li>
+                  <li>Registration</li>
+               </ol>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- breadcrumbarea End -->
+   <!--Main Start-->
+   <main id="dc-main" class="dc-main dc-haslayout dc-innerbgcolor">
+      <!--Register Form Start-->
+      <div class="dc-haslayout dc-main-section">
+         <div class="container">
+            <div class="row justify-content-md-center">
+               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 push-lg-2">
+                  <div class="dc-registerformhold">
+                     <div class="dc-registerformmain">
+                        <div class="dc-registerhead">
+                           <h4>내 손안의 병원 서비스 이용 동의 (필수) </h4>
+
+                           <br>
+                           이 약관은 내 손안의 병원 (이하 “회사”라 합니다)가 “이용자”에게 제공하는 병원 찾기 서비스 (이하 "서비스"라 합니다) 이용과 관련하여 필요한 “이용자”와 “회사”간의 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.
+                           <br><br>
+                           제1조(용어의 정의)
+                           <br>
+                           ① “병원 찾기 서비스”(이하 “서비스”라 합니다.) 란 이용자가 원하는 병원 찾을 때 사용 됩니다.
+                           ② “이용자”란 내 손안의 병원에 회원가입(아이디, 비밀번호 등)을 한 사용자를 말합니다.
+                           <br><br>
+                           제2조(약관의 효력 및 변경)
+                           <br>
+                           ① 이 약관의 내용은 서비스 화면에 게시하여 회원에게 공시하고, 이에 동의한 회원이 서비스에 가입함으로써 효력이 발생합니다.<br><br>
+                           ② 이 약관을 변경할 경우 “회사”는 그 내용을 변경약관 시행일로부터 1개월 이전까지 “이용자” 에게 이용대금명세서, 서면, 전자우편(E-Mail), 휴대폰 문자메시지 서비스, 이동통신 전화 중 1가지 이상의 방법으로 개별 통지하며, “회사”는 위 약관 변경 예정 통지 후 1개월 이내에 별도 계약해지 의사 표시를 하지 않는 경우 변경에 동의한 것으로 본다는 내용을 명시하여 통지합니다.<br><br>
+                           ③ 약관 변경 시 “회사”는 “이용자” 대상 개별 통지 외에 변경된 내용을 전국적으로 보급되는 일간 신문 등에 공고하거나, “회사”의 홈페이지에 게시하는 방법을 병행합니다.<br><br>
+
+
+                           </form>
+                        </div>
+                     </div>
+                     <div class="dc-registerformfooter">
+
+                        <span> 확인하셨나요? <font color="blue" onClick="history.back();">돌아가기</font></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Register Form End-->
+      <!--Skills Start-->
+      <section class="dc-haslayaout dc-footeraboutus dc-bgcolor">
+         <div class="container">
+            <div class="row">
+               <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                  <div class="dc-widgetskills">
+                     <div class="dc-fwidgettitle">
+                        <h3>By Speciality</h3>
+                     </div>
+                     <ul class="dc-fwidgetcontent">
+                        <li><a href="javascript:void(0);">Allergy Specialist</a></li>
+                        <li><a href="javascript:void(0);">Andrologist</a></li>
+                        <li><a href="javascript:void(0);">Anesthetist</a></li>
+                        <li><a href="javascript:void(0);">Audiologist</a></li>
+                        <li><a href="javascript:void(0);">Dietitian/Nutritionist</a></li>
+                        <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                  <div class="dc-widgetskill">
+                     <div class="dc-fwidgettitle">
+                        <h3>Doctors In US</h3>
+                     </div>
+                     <ul class="dc-fwidgetcontent">
+                        <li><a href="javascript:void(0);">Laproscopic Surgeon</a></li>
+                        <li><a href="javascript:void(0);">Oral And Maxillofacial Surgeon</a></li>
+                        <li><a href="javascript:void(0);">Orthopedic Surgeon</a></li>
+                        <li><a href="javascript:void(0);">Pediatric Cardiac Surgeon</a></li>
+                        <li><a href="javascript:void(0);">Pediatric Orthopedic Surgeon</a></li>
+                        <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                  <div class="dc-footercol dc-widgetcategories">
+                     <div class="dc-fwidgettitle">
+                        <h3>By Categories</h3>
+                     </div>
+                     <ul class="dc-fwidgetcontent">
+                        <li><a href="javascript:void(0);">Cosmetic Surgeon</a></li>
+                        <li><a href="javascript:void(0);">Eye Specialist</a></li>
+                        <li><a href="javascript:void(0);">Gastroenterologist</a></li>
+                        <li><a href="javascript:void(0);">General Physician</a></li>
+                        <li><a href="javascript:void(0);">General Practitioner</a></li>
+                        <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                  <div class="dc-widgetbylocation">
+                     <div class="dc-fwidgettitle">
+                        <h3>By Location</h3>
+                     </div>
+                     <ul class="dc-fwidgetcontent">
+                        <li><a href="javascript:void(0);">Switzerland</a></li>
+                        <li><a href="javascript:void(0);">Canada</a></li>
+                        <li><a href="javascript:void(0);">Germany</a></li>
+                        <li><a href="javascript:void(0);">United Kingdom</a></li>
+                        <li><a href="javascript:void(0);">Japan</a></li>
+                        <li class="dc-viewmore"><a href="javascript:void(0);">View All</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--Skills Start End-->
+   </main>
+   <!--Main End-->
+   <!-- Footer Start -->
+<footer id="dc-footer" class="dc-footer dc-haslayout">
+   <div class="dc-footertopbar">
+      <div class="container">
+         <div class="row justify-content-center align-self-center">
+            <div class="col-xs-12 col-sm-12 col-md-8 push-md-2 col-lg-8 push-lg-2">
+               <div class="dc-footer-call-email">
+                  <div class="dc-callinfoholder">
+                     <figure class="dc-callinfoimg">
+                        <img src="/main-template/HTML/images/로고아이콘.png" alt="img description">
+                     </figure>
+                     <div class="dc-callinfocontent">
+                        <h3><span>문의 전화</span> <a href="javascript:void(0);">010-7777-7777</a></h3>
+                     </div>
+                  </div>
+                  <div class="dc-callinfoholder dc-mailinfoholder">
+                     <figure class="dc-callinfoimg">
+                        <img src="/main-template/HTML/images/로고아이콘.png" alt="img description">
+                     </figure>
+                     <div class="dc-callinfocontent">
+                        <h3><span>문의 이메일</span> <a href="mailto:Passion@gmail.com">Passion@gmail.com</a></h3>
+                     </div>
+                  </div>
+                  <span class="dc-or-text">- OR -</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="dc-fthreecolumns">
+      <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 float-left">
+               <div class="dc-fcol dc-widgetcontactus">
+                  <strong class="dc-logofooter"><a href="index.html"><img src="/main-template/HTML/images/로고.png" alt="company logo here"></a></strong>
+                  <div class="dc-footercontent">
+                     <div class="dc-description">
+                        <p> 홈페이지 찾아주셔서 감사합니다 <a href="javascript:void(0)" class="dc-detailsinfo dc-detailsinfofooter">...</a></p>
+                     </div>
+                     <ul class="dc-footercontactus">
+                        <li><address><i class="lnr lnr-location"></i> 서울특별시 노원구 초안산로 12</address></li>
+                        <li><a href="javascript:void(0)"><i class="lnr lnr-envelope"></i> Passion@gmail.com</a></li>
+                        <li><span><i class="lnr lnr-phone-handset"></i> 02-939-1234</span></li>
+                     </ul>
+                     <div class="dc-fsocialicon">
+                        <ul class="dc-simplesocialicons">
+                           <li class="dc-facebook"><a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a></li>
+                           <li class="dc-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
+                           <li class="dc-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+                           <li class="dc-googleplus"><a href="javascript:void(0);"><i class="fab fa-google-plus-g"></i></a></li>
+                           <li class="dc-rss"><a href="javascript:void(0);"><i class="fas fa-rss"></i></a></li>
+                           <li class="dc-youtube"><a href="javascript:void(0);"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Footer End -->
+         </div>
+         <!-- Popup Start-->
+         <div class="modal fade dc-offerpopup" tabindex="-1" role="dialog" id="freequery">
+            <div class="modal-dialog" role="document">
+               <div class="dc-modalcontent modal-content">
+                  <div class="dc-popuptitle">
+                     <h3>Give Category to Your Query</h3>
+                     <a href="javascript;void(0);" class="dc-closebtn close"><i class="lnr lnr-cross" data-dismiss="modal" aria-label="Close"></i></a>
+                  </div>
+                  <div class="modal-body">
+                     <form class="dc-formtheme dc-formhelp">
+                        <fieldset>
+                           <div class="form-group">
+                        <span class="dc-select">
+                           <select data-placeholder="Select Category*" name="Category*">
+                              <option value="Country">Select services Category*</option>
+                              <option value="Country">Cosmetic Surgeon</option>
+                              <option value="Country">Eye Specialist</option>
+                              <option value="Country">Gastroenterologist</option>
+                              <option value="Category">General Physician</option>
+                           </select>
+                        </span>
+                           </div>
+                           <div class="form-group">
+                              <input type="text" name="search" value="" class="form-control" placeholder="Title Your Query*" required="">
+                           </div>
+                           <div class="form-group">
+                              <textarea class="form-control" placeholder="Type Your Query*"></textarea>
+                           </div>
+                           <div class="form-group dc-btnarea">
+                              <a href="javascript:void(0);" class="dc-btn">Ask Free Query</a>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Popup End-->
+         <script src="/main-template/HTML/js/vendor/jquery-3.3.1.js"></script>
+         <script src="/main-template/HTML/js/vendor/jquery-library.js"></script>
+         <script src="/main-template/HTML/js/vendor/bootstrap.min.js"></script>
+         <script src="/main-template/HTML/js/moment.min.js"></script>
+         <script src="/main-template/HTML/js/fullcalendar.min.js"></script>
+         <script src="/main-template/HTML/js/owl.carousel.min.js"></script>
+         <script src="/main-template/HTML/js/chosen.jquery.js"></script>
+         <script src="/main-template/HTML/js/scrollbar.min.js"></script>
+         <script src="/main-template/HTML/js/jquery-ui.js"></script>
+         <script src="/main-template/HTML/js/prettyPhoto.js"></script>
+         <script src="/main-template/HTML/js/jquery-ui.js"></script>
+         <script src="/main-template/HTML/js/slick.min.js"></script>
+         <script src="/main-template/HTML/js/appear.js"></script>
+         <script src="/main-template/HTML/js/jRate.js"></script>
+         <script src="/main-template/HTML/js/main.js"></script>
+
+         <!-- Footer End -->
+      </div>
+      <!--Wrapper End-->
+
+</body>
+</html>

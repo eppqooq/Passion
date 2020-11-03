@@ -28,15 +28,16 @@ public class AdminHospitalService
 
     public Hospital editFormHospitalObject(Hospital hospital, HospitalForm hospitalForm)
     {
-        String tel = hospitalForm.getTel1() + hospitalForm.getTel2() + hospitalForm.getTel3();
-
         hospital.setNo(hospitalForm.getNo());
         hospital.setName(hospitalForm.getName());
         hospital.setLocation(hospitalForm.getLocation());
         hospital.setInformation1(hospitalForm.getInformation1());
         hospital.setInformation2(hospitalForm.getInformation2());
+        hospital.setLatitude(hospitalForm.getLatitude());
+        hospital.setHardness(hospitalForm.getHardness());
         hospital.setKind_no(hospitalForm.getKind_no());
-        hospital.setTel(tel);
+        hospital.setTel(hospitalForm.getTel());
+        hospital.setImage(hospitalForm.getImage());
         return hospital;
     }
     public void updateHospital(Hospital hospital)

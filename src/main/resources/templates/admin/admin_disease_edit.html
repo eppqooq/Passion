@@ -1,0 +1,101 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<style>
+    .mycolor1 {
+        background-color:black; color:white;
+    }
+    .mycolor2
+    {
+        background-color:lightgray;
+    }
+</style>
+<div th:replace="fragments/common :: header"></div>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Diseases</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Disease Data</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <form name="form1" method="post" action="/admin/disease/update">
+
+
+                            <tr>
+                                <td width="20%" class="mycolor2" style="vertical-align:middle"> NO</td>
+                                <input type="hidden" name="no" th:value="${disease.get().getNo()}">
+                                <td width="80%" align="left" th:text="${disease.get().getNo()}">1</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td width="20%" class="mycolor2" style="vertical-align:middle">제목</td>
+                                <td width="80%" align="left">
+                                    <div class="form-inline">
+                                        <input type="text" name="title" th:value="${disease.get().getTitle()}"
+                                               class="form-control form-control-sm">
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="20%" class="mycolor2" style="vertical-align:middle">요약</td>
+                                <td width="80%" align="left">
+                                    <div class="form-inline">
+                                        <input type="text" name="small" th:value="${disease.get().getSmall()}"
+                                               class="form-control form-control-sm">
+
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td width="20%" class="mycolor2" style="vertical-align:middle">내용</td>
+                                <td width="80%" align="left">
+                                    <div class="form-inline">
+                                        <input type="text" name="content" th:value="${disease.get().getContent()}"
+                                               class="form-control form-control-sm">
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="20%" class="mycolor2" style="vertical-align:middle">사진</td>
+                                <td width="80%" align="left">
+                                    <div class="form-inline">
+                                        <input type="text" name="picture" th:value="${disease.get().getPicture()}"
+                                               class="form-control form-control-sm">
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+                    </table>
+
+
+                    <div align="center">
+                        <input type="submit" value="저장" style="cursor:pointer !important;" class="btn btn-sm mycolor1">&nbsp;
+                        <input type="button" value="이전화면" style="cursor:pointer; " class="btn btn-sm mycolor1" onClick="history.back();">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </form>
+        <div th:replace="fragments/common :: footer"></div>
