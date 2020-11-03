@@ -20,5 +20,4 @@ public interface SpringDataJpaBoardRepository extends JpaRepository<Board, Long>
     List<Board> findByTitleContaining(String title);
     @Override
     Optional <List<Board>> findByContentContaining(String content);
-
 }

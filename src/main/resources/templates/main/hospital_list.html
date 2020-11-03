@@ -146,7 +146,7 @@
 
                                 <div class="dc-docpostholder" th:each = "helper : ${helpers}">
                                     <figure class="dc-docpostimg">
-                                        <img src="/main-template/HTML/images/백병원.png"  alt="img description">
+                                        <img th:src="@{/main-template/HTML/images/}+${helper.hospital.getImage()}"  alt="img description">
                                         <figcaption>
                                             <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
                                         </figcaption>
@@ -175,46 +175,47 @@
                                     </div>
                                 </div>
 
-                                <div class="dc-docpostholder">
-                                    <figure class="dc-docpostimg">
-                                        <img src="/main-template/HTML/images/백병원.png"  alt="img description">
-                                        <figcaption>
-                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="dc-docpostcontent">
-                                        <div class="dc-title">
-                                            <a href="javascript:void(0)" class="dc-docstatus">대학병원</a>
-                                            <h3><a href="javascript:void(0);">인제대학교 상계백병원 </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>
-                                            <ul class="dc-docinfo">
-                                                <li>
-                                                    <em>대표전화 : 02-950-1114</em>
-                                                </li>
-                                                <li>
-                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="dc-doclocation dc-doclocationvtwo">
-                                            <span><i class="ti-direction-alt"></i> 서울특별시 노원구 상계6.7동 동일로 1342</span>
-                                            <span><i class="ti-calendar"></i> 월, 화, 수, 목, 금, 토 <em class="dc-dayon">일</em></span>
-                                            <div class="dc-btnarea">
-                                                <a href="doctorsingle.html"class="dc-btn">자세히보기</a>
-                                                <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="dc-docpostholder">-->
+<!--                                    <figure class="dc-docpostimg">-->
+<!--                                        <img src="/main-template/HTML/images/백병원.png"  alt="img description">-->
+<!--                                        <figcaption>-->
+<!--                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>-->
+<!--                                        </figcaption>-->
+<!--                                    </figure>-->
+<!--                                    <div class="dc-docpostcontent">-->
+<!--                                        <div class="dc-title">-->
+<!--                                            <a href="javascript:void(0)" class="dc-docstatus">대학병원</a>-->
+<!--                                            <h3><a href="javascript:void(0);">인제대학교 상계백병원 </a> <i class="fa fa-award dc-awardtooltip"><em>Medical Registration Verified</em></i> <i class="fa fa-check-circle dc-awardtooltip"><em>Medical Registration Verified</em></i></h3>-->
+<!--                                            <ul class="dc-docinfo">-->
+<!--                                                <li>-->
+<!--                                                    <em>대표전화 : 02-950-1114</em>-->
+<!--                                                </li>-->
+<!--                                                <li>-->
+<!--                                                    <span class="dc-stars"><span></span></span><em>2100 Feedback</em>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
+<!--                                        <div class="dc-doclocation dc-doclocationvtwo">-->
+<!--                                            <span><i class="ti-direction-alt"></i> 서울특별시 노원구 상계6.7동 동일로 1342</span>-->
+<!--                                            <span><i class="ti-calendar"></i> 월, 화, 수, 목, 금, 토 <em class="dc-dayon">일</em></span>-->
+<!--                                            <div class="dc-btnarea">-->
+<!--                                                <a href="doctorsingle.html"class="dc-btn">자세히보기</a>-->
+<!--                                                <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <nav class="dc-pagination">
                                     <ul>
                                         <li class="dc-prevpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-left"></i></a></li>
-                                        <li><a href="javascrip:void(0);">1</a></li>
-                                        <li><a href="javascrip:void(0);">2</a></li>
-                                        <li><a href="javascrip:void(0);">3</a></li>
-                                        <li><a href="javascrip:void(0);">4</a></li>
-                                        <li><a href="javascrip:void(0);">...</a></li>
-                                        <li><a href="javascrip:void(0);">50</a></li>
+
+                                        <div style="display: inline-block" th:each="page : ${pageNum}">
+
+                                            <li><a th:href="@{/hospital/list(no=${page})}" th:text="${page}">2</a></li>
+
+                                        </div>
+
                                         <li class="dc-nextpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-right"></i></a></li>
                                     </ul>
                                 </nav>

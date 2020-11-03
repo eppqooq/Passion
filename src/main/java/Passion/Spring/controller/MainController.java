@@ -31,17 +31,17 @@ public class MainController {
         if(searchKind.equals("게시판"))           // searchText가 게시판이면
         {
             System.out.println("게시판");
-            return "redirect:/board/list";
+            return "redirect:/board/list?no=1";
         }
         else if(searchKind.equals("병원")) // searchText가 병원이면
             {
                 System.out.println("병원");
-                return "redirect:/hospital/list";
+                return "redirect:/hospital/list?no=1";
             }
             else  // searchText 가 질병이면
             {
                 System.out.println("질병");
-                return "redirect:/disease/list";
+                return "redirect:/disease/list?no=1";
             }
     }
 

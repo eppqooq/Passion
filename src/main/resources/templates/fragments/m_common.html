@@ -84,13 +84,13 @@
                                     <div class="collapse navbar-collapse dc-navigation" id="navbarNav">
                                         <ul class="navbar-nav">
                                             <li class="menu-item-has-children page_item_has_children ">
-                                                <a href="/board/list">게시판</a>
+                                                <a href="/board/list?no=1">게시판</a>
                                             </li>
                                             <li class="menu-item-has-children page_item_has_children">
-                                                <a href="/hospital/list">병원 목록</a>
+                                                <a href="/hospital/list?no=1">병원 목록</a>
                                             </li>
                                             <li class="menu-item-has-children page_item_has_children">
-                                                <a href="/disease/list">질병 리스트</a>
+                                                <a href="/disease/list?no=1">질병 리스트</a>
                                             </li>
 
                                             <li class="menu-item-has-children page_item_has_children dc-navactive">
@@ -107,11 +107,13 @@
 
                                 <div class="dc-loginarea" th:if="${session.isLogined != null}">
                                     <div class="dc-loginoption">
-                                        <a href="/logout"><div id="size3">로그아웃</div></a>
+                                        <a href="/logout"><div id="size3" style="margin-bottom: -25px;">로그아웃</div></a>
                                         <div class="dc-loginformhold">
                                         </div>
                                     </div>
                                 </div>
+
+
 
                             </div>
                         </div>

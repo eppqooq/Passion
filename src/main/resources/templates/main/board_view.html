@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <HEADER>
-    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
-    <link rel="stylesheet" href="/main-template/HTML/css/test.css">
+    <link href="http://example.com/myicon.png" rel="icon" type="image/png">
+    <link href="/main-template/HTML/css/test.css" rel="stylesheet">
 </HEADER>
 <style>
+    .CommentBox .comment_list .CommentItem {
+        position: relative;
+        border-top: 1px solid gray;
+    }
+
     .dc-breadcrumbarea {
         float: left;
         width: 100%;
         padding: 120px 0 0 !important;
     }
+
     .dc-main-section {
         padding: 15px 0 !important;
     }
+
     .CommentWriter {
         margin: 12px 0 29px;
         padding: 16px 10px 10px 18px;
@@ -21,16 +28,19 @@
         box-sizing: border-box;
         background: white;
     }
+
     .CommentBox {
         margin-top: -17px;
         border-top: 1px solid gray;
     }
+
     .ArticleContentBox .article_header {
         position: relative;
         margin-bottom: 20px;
         padding-bottom: 20px;
         border-bottom: 1px solid gray;
     }
+
     .dc-navdocsingletab li a {
         color: #767676 !important;
         display: block;
@@ -43,6 +53,7 @@
         border-left: 0;
         border-radius: 4px 4px 0 0;
     }
+
     .ArticleContentBox {
         padding: 29px 29px 0;
         border: 1px solid gray;
@@ -70,7 +81,8 @@
 </div>
 <!-- breadcrumbarea End -->
 <!-- Main Start -->
-<main id="dc-main" class="dc-main dc-haslayout">
+
+<main class="dc-main dc-haslayout" id="dc-main">
 
     <!-- About Welcome Start -->
     <!-- About Welcome Start -->
@@ -78,54 +90,216 @@
         <!-- User Listing Start-->
         <div class="container">
             <div class="row">
-                <div class="ArticleContentBox" style="margin-bottom: 200px;"><div class="article_header"><div class="ArticleTitle">
-                    <a href="/" class="link_board" th:text="${board.get().getKind_no()}"> 정신과
-                    <svg aria-hidden="true" class="svg-icon ico-post-arrow-03-c-75-a"><use xlink:href="#ico-post-arrow-03-c-75-a"></use></svg></a><div class="title_area"><!----><!----><!---->
-                    <h3 class="title_text" th:text="${board.get().getTitle()}">
-                    요즘 헛것이 보이네요
-                </h3></div></div><div class="WriterInfo"><div class="profile_area"><div class="profile_info">
-                    ID : <div class="nick_box" th:text="${member.get().getId()}">
-                    rpdud10
-                    <!----></div><!----><!----><!----></div><div class="article_info"  th:text="${board.get().getCreate_day()}" >
-                    <span class="date">2020.11.02. 14:29</span></div></div></div><div class="ArticleTool"><a href="#" role="button" class="button_comment">
-                    조회수 : <font th:text="${board.get().getViews()}"> </font>
-                    <div class="more_area"><!----><!----><div class="LayerArticle" style="display: none;"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div class="article_layer cafe_calendar_layer" style="width: 279px; z-index: 2000;"><h3 class="blind">
 
 
-                        </p><div class="btn_area"></div></div><!----></div><div class="LayerArticle" style="display: none;"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div class="article_layer cafe_calendar_layer" style="width: 279px; z-index: 2000;"><h3 class="blind">
+                <div class="ArticleContentBox" style="margin-bottom: 200px;">
+                    <div class="article_header">
+                        <div class="ArticleTitle">
+                            <div class="" style="margin-bottom:-51px; float:right !important;" th:if="${isMe}">
+                                <a class="dc-btn" style="margin-right: 10px; min-width: 70px !important;"
+                                   th:href="@{/board/update(no=${board.get().getNo()})}">수정</a>
+                                <a class="dc-btn" style="min-width: 70px !important;"
+                                   th:href="@{/board/deleteBoard(no=${board.get().getNo()})}">삭제</a>
+                            </div>
+                            <a class="link_board" href="/" th:text="${board.get().getKind_no()}"> 정신과
+                                <svg aria-hidden="true" class="svg-icon ico-post-arrow-03-c-75-a">
+                                    <use xlink:href="#ico-post-arrow-03-c-75-a"></use>
+                                </svg>
+                            </a>
+                            <div class="title_area"><!----><!----><!---->
+                                <h3 class="title_text" th:text="${board.get().getTitle()}">
+                                    요즘 헛것이 보이네요
+                                </h3></div>
+                        </div>
+                        <div class="WriterInfo">
+                            <div class="profile_area">
+                                <div class="profile_info">
+                                    ID
+                                    <div class="nick_box" th:text="${member.get().getId()}">
+                                        rpdud10
+                                        <!----></div><!----><!----><!----></div>
+                                <div class="article_info" th:text="${board.get().getCreate_day()}">
+                                    <span class="date">2020.11.02. 14:29</span></div>
+                            </div>
+                        </div>
+                        <div class="ArticleTool"><a class="button_comment" href="#" role="button">
+                            조회수 : <font th:text="${board.get().getViews()}"> </font>
+                            <div class="more_area"><!----><!---->
+                                <div class="LayerArticle" style="display: none;"><!----><!----><!----><!----><!---->
+                                    <!----><!----><!----><!----><!---->
+                                    <div class="article_layer cafe_calendar_layer" style="width: 279px; z-index: 2000;">
+                                        <h3 class="blind">
+
+
+                                            </p>
+                                            <div class="btn_area"></div>
+                                    </div><!----></div>
+                                <div class="LayerArticle" style="display: none;"><!----><!----><!----><!----><!---->
+                                    <!----><!----><!----><!----><!----><!---->
+                                    <div class="article_layer cafe_calendar_layer" style="width: 279px; z-index: 2000;">
+                                        <h3 class="blind">
+
+
+                                            <div class="btn_area"></div>
+                                    </div>
+                                </div>
+                            </div></div>
+                    </div>
+                    <div class="article_container"><!----><!----><!----><!---->
+                        <div class="article_viewer"><!----><!----><!----><!---->
+                            <div class="ContentRenderer">
+                                <div>
+                                    <div class="colorscripter-code">
+                                        <font size="3" th:text="${board.get().getContent()}">
+                                            <span style="background-color: rgb(250, 250, 250);">아니 나 이거 안돼요 개짜증나네용ㄴㅇㄴㅇㄴㅇㄴㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇ</span></font>
+                                    </div>
+                                </div><!----></div><!----></div><!----><!----><!---->
+
+
+                        <div class="article_writer">
+                            <div class="ArticleWriterProfile"><span class="thumb">
+                            </div><!----></div>
+                        <div class="ReplyBox">
+                            <div class="box_left">
+                                <div class="like_article">
+                                    <div class="ReactionLikeIt u_likeit_list_module _reactionModule"
+                                         data-catgid="27863418" data-cid="27863418_rpdud10_42"
+                                         data-did="CAFE"
+                                         data-facetype="0" data-loaded="1"
+                                         data-sid="CAFE" style="visibility: visible;"></div>
+                                </div>
+                                댓글<strong class="num">0</strong></a></div>
+                            <div class="box_right">
+                                <div class="count_article"></div>
+                                <div class="social_article">
+                                    <div class="text_area">
+
+                                    </div>
+                                </div><!----></div>
+                        </div>
+                        <div class="CommentBox">
+                            <div class="comment_option"><h3 class="comment_title">
+                                댓글
+                            </h3><!---->
+                                <div class="comment_alarm">
+                                    <div class="SubscribeButton">
+                                        <div class="ToggleSwitch"></div>
+                                    </div>
+                                    <div class="ToggleSwitchTooltip">
+                                        <div class="tooltip" style="display: none;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!----><!---->
+
+                            <form method="post" action="/reply/register">
+                                <input type="hidden" name="member_no" th:if="${isMe}" th:value="${sessionMember.getNo()}">
+                                <input type="hidden" name="boardNo" th:value="${board.get().getNo()}">
+                                <div class="CommentWriter" data-v-79bd409c="">
+                                    <div class="comment_inbox" data-v-79bd409c="">
+                                        <em class="comment_inbox_name" data-v-79bd409c="" th:if="${isMe}" th:text="${sessionMember.getId()}">rpdud10</em>
+                                        <em class="comment_inbox_name" data-v-79bd409c="" th:if="${isMe}==${null}" th:text="@{비회원}">rpdud10</em>
+                                        <textarea name="content" class="comment_inbox_text" data-v-79bd409c="" placeholder="댓글을 남겨보세요"
+                                                  rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 50px;"></textarea>
+                                        <!----><!----></div>
+                                    <div class="comment_attach" data-v-79bd409c="">
+                                        <div class="attach_box" data-v-79bd409c="">
+
+                                        </div>
+                                        <div class="register_box" data-v-79bd409c=""><!---->
+                                            <input class="button btn_register"
+                                                   style="cursor:pointer !important;" type="submit" value="등록하기">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="CommentBox">
+                                <div class="comment_option">
+                                    <div class="comment_tab"></div>
+                                    <div class="comment_alarm">
+                                        <div class="SubscribeButton">
+                                            <div class="ToggleSwitch"></div>
+                                        </div>
+                                        <div class="ToggleSwitchTooltip">
+                                            <div class="tooltip" style="display: none;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
-                        <div class="btn_area"></div></div></div></div></div></div><div class="article_container"><!----><!----><!----><!----><div class="article_viewer"><!----><!----><!----><!----><div class="ContentRenderer"><div><div class="colorscripter-code">
-                    <font size="3"  th:text="${board.get().getContent()}">
-                    <span style="background-color: rgb(250, 250, 250);">아니 나 이거 안돼요 개짜증나네용ㄴㅇㄴㅇㄴㅇㄴㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇ</span></font></div></div><!----></div><!----></div><!----><!----><!---->
+                                <ul class="comment_list">
+                                    <li class="CommentItem" id="66867785" th:each="helper : ${viewHelpers}">
+                                        <div class="comment_area">
+                                            <div class="comment_nick_info"><a aria-expanded="false" aria-haspopup="true"
+                                                                              class="comment_nickname"
+                                                                              href="#" id="cih66867785"
+                                                                              role="button" th:text="${helper.getMember().getId()}">
+                                                화공가즈아
+                                                <!----></div><!----></div>
+                                        <div class="comment_text_box"><p class="comment_text_view"><!---->
+                                            <span class="text_comment" th:text="${helper.getReply().getContent()}">고생하셨습니다 축하드립니다</span></p>
+<!--                                            <a class="button btn_register" data-v-79bd409c="" href="#" role="button"-->
+<!--                                               style="border: 2px solid gray; margin-right: 10px;">수정</a>-->
+<!--                                            <a class="button btn_register" data-v-79bd409c="" href="#" role="button"-->
+<!--                                               style="border: 2px solid gray;">삭제</a>-->
+                                            <!----></div>
+                                        <div class="comment_info_box"><span
+                                                class="comment_info_date" th:text="${helper.getReply().getReg_date()}">2020.11.03. 20:07</span>
+<!--                                            <a href="#" role="button" class="comment_info_button">-->
+<!--                                                답글쓰기-->
+<!--                                            </a>-->
+                                        </div>
+                                    </li>
 
 
 
 
 
-                    <div class="article_writer"><div class="ArticleWriterProfile"><span class="thumb">
-                    </div><!----></div><div class="ReplyBox"><div class="box_left"><div class="like_article"><div data-sid="CAFE" data-did="CAFE" data-cid="27863418_rpdud10_42" data-catgid="27863418" class="ReactionLikeIt u_likeit_list_module _reactionModule" data-loaded="1" data-facetype="0" style="visibility: visible;"> </div></div>
-                        댓글<strong class="num">0</strong></a></div><div class="box_right"><div class="count_article"></div><div class="social_article"><div class="text_area">
-
-                    </div></div><!----></div></div><div class="CommentBox"><div class="comment_option"><h3 class="comment_title">
-                        댓글
-                    </h3><!----><div class="comment_alarm"><div class="SubscribeButton"><div class="ToggleSwitch"></div></div><div class="ToggleSwitchTooltip"><div class="tooltip" style="display: none;">
-
-                    </div></div></div></div><!----><!----><div data-v-79bd409c="" class="CommentWriter"><div data-v-79bd409c="" class="comment_inbox"><em data-v-79bd409c="" class="comment_inbox_name">rpdud10</em>
-                        <textarea data-v-79bd409c="" placeholder="댓글을 남겨보세요" rows="1" class="comment_inbox_text" style="overflow: hidden; overflow-wrap: break-word; height: 50px;"></textarea>
-                        <!----><!----></div><div data-v-79bd409c="" class="comment_attach"><div data-v-79bd409c="" class="attach_box">
-
-                    </div><div data-v-79bd409c="" class="register_box"><!---->
-                        <a data-v-79bd409c="" href="#" role="button" class="button btn_register">등록</a></div></div></div><!----></div><!----></div></div>
-
-
-
-
-
-
+<!--                                    <li id="66873095" class="CommentItem CommentItem&#45;&#45;reply"><div class="comment_area">-->
+<!--                                        <img src="/main-template/HTML/images/arrow.png" alt="대댓글" width="36" height="36">-->
+<!--                                        <div class="comment_box" style="margin-top: -50px;">-->
+<!--                                            <div class="comment_nick_box">-->
+<!--                                                <div class="comment_nick_info">-->
+<!--                                                    갓형-->
+<!--                                                    &lt;!&ndash;&ndash;&gt;</div></div><div class="comment_text_box"><p class="comment_text_view">&lt;!&ndash;&ndash;&gt;<span class="text_comment">지금 집근처 중소 주5일 8시간 2600제의 왔는데 집근처 다니는게 훨 좋은거 같네요</span></p>&lt;!&ndash;&ndash;&gt;</div>-->
+<!--                                            <div class="comment_info_box">-->
+<!--                                                <span class="comment_info_date">2020.11.04. 00:20</span><a href="#" role="button" class="comment_info_button">-->
+<!--                                                답글쓰기-->
+<!--                                            </a></div><div data-v-1fe2585c="" class="comment_tool">&lt;!&ndash;&ndash;&gt;</div></div></div>-->
+<!--                                </li>-->
+                                    <div class="comment_tool" data-v-1fe2585c=""><!----></div>
+                            </div>
+                        </div>
+                        </li><!----><!----></div>
+                </div>
+                <div class="comment_text_box"><p class="comment_text_view"><!----><!----></div>
+                <div class="comment_info_box">
+                </div>
+                <div class="comment_tool" data-v-1fe2585c=""></div>
             </div>
         </div>
+        </li><!----><!----></div><!----></div>
+    <div class="comment_text_box"><p class="comment_text_view"><!----><!----></div>
+    <div class="comment_info_box">
+    </div>
+    <div class="comment_tool" data-v-1fe2585c=""><!----></div>
+    </div></div></li><!----></ul><!---->
+    <div class="comment_attach" data-v-79bd409c="">
+        <div class="attach_box" data-v-79bd409c="">
+
+        </div>
+    </div>
+    </div>
+
+    <!----></div><!----></div></div>
+
+
+    </div>
+    </div>
     </div>
     </div>
     <!-- User Listing End-->

@@ -2,9 +2,10 @@ package Passion.Spring.controller;
 
 import Passion.Spring.Form.BoardForm;
 import Passion.Spring.domain.Board;
-import Passion.Spring.domain.Hospital;
 import Passion.Spring.domain.Member;
+import Passion.Spring.domain.Reply;
 import Passion.Spring.service.*;
+import Passion.Spring.tech.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,27 +27,27 @@ public class BoardController extends AdminBoardController {
     BoardService boardService;
     AdminMemberService adminMemberService;
     AdminHospitalService adminHospitalService;
+    AdminReplyService adminReplyService;
     @Autowired
     public BoardController(BoardService boardService, AdminMemberService adminMemberService,
-                           AdminHospitalService adminHospitalService)
+                           AdminHospitalService adminHospitalService, AdminReplyService adminReplyService)
     {
         super(boardService);
         this.boardService=boardService;
         this.adminMemberService=adminMemberService;
         this.adminHospitalService=adminHospitalService;
+        this.adminReplyService=adminReplyService;
     }
     @GetMapping("list") // main에서 게시판 검색 또는 게시판 메뉴를 클릭해서 들어올 때
-    public String boardList(HttpSession session, Model model)
+    public String boardList(HttpSession session, Model model, @RequestParam("no") int no)
     {
         String searchText = (String) session.getAttribute("searchText");
         session.removeAttribute("searchText"); //세션부터 삭제하시고
         if (searchText!=null) // searchText의 값이 있다면
         {
-
-            List<A> fucking = new ArrayList<>();
+            List<A> helpers1 = new ArrayList<>();
             List<Board> boards = boardService.findBoards();
             List<Board> contentContainBoards = new ArrayList<>();
-            List<Board> titleContainBoards = new ArrayList<>();
             List<String> members = new ArrayList<>();
             Optional<Member> helper = null;
 
@@ -61,16 +62,25 @@ public class BoardController extends AdminBoardController {
                 helper = adminMemberService.findByNo(board.getMember_no()); // 해당 게시판의 작성자를 받는 optional helper.
                 if (helper.isPresent()) {
                     members.add(helper.get().getId()); // 빈 배열 members에 해당 게시판의 작성자를 추가한다.
-                    A fuck = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 fuck 객체.
-                    fucking.add(fuck); // fuck들을 가지고 있는 fucking 객체의 배열에 요소 하나 추가.
+                    A temp = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 fuck 객체.
+                    helpers1.add(temp); // temp들을 가지고 있는 helpers1 객체의 배열에 요소 하나 추가.
                 }
-            } // -> fucking이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
+            } // -> helpers1이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
 
-            model.addAttribute("fucking", fucking);
+
+            Pagination <A> pagination=new Pagination<A>(helpers1,no,helpers1.size(),7, 5);
+
+            System.out.println("페이지 번호 = " + no);
+            List<A> help = pagination.paginationObject();
+            model.addAttribute("help", help);
+            List<Integer> page= pagination.paginationPage();
+            model.addAttribute("page",page);
+            model.addAttribute("maxPage",helpers1.size());
+            System.out.println("page = " + page);
         }
         else  // searchText의 값이 없다면
         {
-            List<A> fucking = new ArrayList<>();
+            List<A> helpers3 = new ArrayList<>();
             List<Board> boards = boardService.findBoards();
             List<String> members = new ArrayList<>();
             Optional<Member> helper = null;
@@ -79,11 +89,17 @@ public class BoardController extends AdminBoardController {
                 helper = adminMemberService.findByNo(board.getMember_no());
                 if (helper.isPresent()) {
                     members.add(helper.get().getId());
-                    A fuck = new A(board, helper.get());
-                    fucking.add(fuck);
+                    A temp = new A(board, helper.get());
+                    helpers3.add(temp);
                 }
             }
-            model.addAttribute("fucking", fucking);
+            Pagination <A> pagination=new Pagination<A>(helpers3,no,helpers3.size(),7, 5);
+            List<A> help = pagination.paginationObject();
+            model.addAttribute("help", help);
+            List<Integer> page= pagination.paginationPage();
+            model.addAttribute("page",page);
+            model.addAttribute("maxPage",pagination.getMaxPageValue());
+
         }
         return "main/board_list";
     }
@@ -92,12 +108,15 @@ public class BoardController extends AdminBoardController {
                                 @RequestParam("searchKindOf") String searchKindOf,
                                         Model model)
     {
-        List<A> fucking = new ArrayList<>();
+        
+        List<A> help = new ArrayList<>();
+
         List<Board> boards = boardService.findBoards();
         List<String> members = new ArrayList<>();
         Optional<Member> helper = null;
         System.out.println("searchText = " + searchText);
         System.out.println("searchKindOf = " + searchKindOf);
+
         if (searchKindOf.equals("내용"))  // 내용 검색일 경우
         {
             List<Board> contentContainBoards = new ArrayList<>();
@@ -114,11 +133,17 @@ public class BoardController extends AdminBoardController {
                 helper = adminMemberService.findByNo(board.getMember_no()); // 해당 게시판의 작성자를 받는 optional helper.
                 if (helper.isPresent()) {
                     members.add(helper.get().getId()); // 빈 배열 members에 해당 게시판의 작성자를 추가한다.
-                    A fuck = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 fuck 객체.
-                    fucking.add(fuck); // fuck들을 가지고 있는 fucking 객체의 배열에 요소 하나 추가.
+                    A temp = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 temp 객체.
+                    help.add(temp); // fuck들을 가지고 있는 help 객체의 배열에 요소 하나 추가.
                 }
             } // -> fucking이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
-            model.addAttribute("fucking",fucking);
+            Pagination<A> pagination = new Pagination<A>(help,1,help.size(),7,5);
+                    List<A> paginationHelp=pagination.paginationObject();
+                    List<Integer> page = pagination.paginationPage();
+            model.addAttribute("page",page);
+            model.addAttribute("maxPage",pagination.getMaxPageValue());
+            model.addAttribute("help",paginationHelp);
+            
         }
         else if (searchKindOf.equals("제목"))// searchKindOf == "제목"
         {
@@ -139,12 +164,16 @@ public class BoardController extends AdminBoardController {
                 helper = adminMemberService.findByNo(board.getMember_no()); // 해당 게시판의 작성자를 받는 optional helper.
                 if (helper.isPresent()) {
                     members.add(helper.get().getId()); // 빈 배열 members에 해당 게시판의 작성자를 추가한다.
-                    A fuck = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 fuck 객체.
-                    fucking.add(fuck); // fuck들을 가지고 있는 fucking 객체의 배열에 요소 하나 추가.
+                    A temp = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 temp 객체.
+                    help.add(temp); // temp들을 가지고 있는 help 객체의 배열에 요소 하나 추가.
                 }
             } // -> fucking이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
-            model.addAttribute("fucking",fucking);
-
+            Pagination<A> pagination = new Pagination<A>(help,1,help.size(),7,5);
+            List<A> paginationHelp=pagination.paginationObject();
+            List<Integer> page = pagination.paginationPage();
+            model.addAttribute("page",page);
+            model.addAttribute("maxPage",pagination.getMaxPageValue());
+            model.addAttribute("help",paginationHelp);
         }
         model.addAttribute("searchText",searchText);
         model.addAttribute("searchKindOf",searchKindOf);
@@ -153,19 +182,75 @@ public class BoardController extends AdminBoardController {
     }
 
     @GetMapping("view")
-    public String boardView(@RequestParam("no") Long no, Model model)
+    public String boardView(HttpSession session, @RequestParam("no") Long no, Model model)
     {
+        Long loginedMemberNo = (Long) session.getAttribute("loginedMemberNo");
         Optional <Board> board = boardService.findByNo(no);
         Optional <Member> member = adminMemberService.findByNo(board.get().getMember_no());
+
+        if(loginedMemberNo != null) // 로그인 한 상태일 경우
+        {
+            if(member.get().getNo().equals(loginedMemberNo) == true )
+                model.addAttribute("isMe",true);
+            Optional <Member> sessionMember = adminMemberService.findByNo(loginedMemberNo);
+                model.addAttribute("sessionMember",sessionMember.get());
+
+        }
         //Optional <Hospital> hospital = adminHospitalService.findByNo(board.get().get());
+        List<Reply> replys = adminReplyService.findReplys(); // 전체 reply 조회
+        List<Reply> replysWhereBoardNo = new ArrayList<>();
+        for (Reply reply : replys)
+        {
+            if(reply.getBoard_no().toString()
+                    .equals(board.get().getNo().toString()))
+                replysWhereBoardNo.add(reply); // 해당 보드의 리뷰들의 집합.
+        }
+
+        List<ViewHelper> viewHelpers = new ArrayList<>();
+
+
+        for(Reply reply : replysWhereBoardNo)
+        {
+            Optional <Member> memberWhereMemberNoInReply = adminMemberService.findByNo((long)reply.getMember_no());
+            ViewHelper helper = new ViewHelper(reply, memberWhereMemberNoInReply.get());
+            viewHelpers.add(helper);
+        }
+
         if (board.get().getViews()!=null)
                 board.get().setViews(board.get().getViews()+1);
         boardService.updateBoard(board.get());
+        model.addAttribute("viewHelpers",viewHelpers);
         model.addAttribute("board",board);
         model.addAttribute("member",member);
         return "main/board_view";
     }
+    public class ViewHelper
+    {
+        private Reply reply;
+        private Member member;
 
+        public Member getMember() {
+            return member;
+        }
+
+        public void setMember(Member member) {
+            this.member = member;
+        }
+
+        ViewHelper(Reply reply, Member member)
+        {
+            this.reply = reply;
+            this.member = member;
+        }
+
+        public Reply getReply() {
+            return reply;
+        }
+
+        public void setReply(Reply reply) {
+            this.reply = reply;
+        }
+    }
     @GetMapping("edit")
     public String boardEdit(@RequestParam("no") Long no, Model model)
     {
@@ -186,8 +271,6 @@ public class BoardController extends AdminBoardController {
         {
             return "main/board_create_form";// create Form으로 가버렷
         }
-
-
     }
     @PostMapping ("create")
     public String boardSave(HttpSession session, BoardForm boardForm,Model model)
@@ -239,6 +322,30 @@ public class BoardController extends AdminBoardController {
         public void setBoard(Board board) {
             this.board = board;
         }
+    }
+
+    @GetMapping("update")
+    public String boardUpdate(@RequestParam ("no") Long no, Model model)
+    {
+        Optional <Board> board = boardService.findByNo(no);
+        model.addAttribute("board",board.get());
+        return "main/board_update_form";
+    }
+    @PostMapping("update")
+    public String boardUpdate(BoardForm boardForm)
+    {
+        Board board = null;
+        board = boardService.updateFormBoardObject(board, boardForm);
+        boardService.updateBoard(board);
+        return "redirect:/board/list?no=1";
+    }
+
+    @GetMapping("deleteBoard")
+    @Transactional
+    public String boardDelete1(@RequestParam ("no") Long no)
+    {
+        boardService.deleteByNo(no);
+        return "redirect:/board/list?no=1";
     }
 
 }

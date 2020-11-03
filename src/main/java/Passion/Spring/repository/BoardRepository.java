@@ -14,7 +14,6 @@ public interface BoardRepository {
     void deleteByNo(Long no);
     List <Member> members();
     List <Board> findByContentContainingIgnoreCaseOrTitleContainingIgnoreCase(String content, String Title);
-
     List<Board> findByTitleContaining(String title);
     Optional<List<Board>> findByContentContaining(String content);
     // Containing : 포함하고 있는지

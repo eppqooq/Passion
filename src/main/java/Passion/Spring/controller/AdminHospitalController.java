@@ -24,7 +24,7 @@ public class AdminHospitalController
         this.adminHospitalService = adminHospitalService;
     }
 
-    @GetMapping("list")
+    @GetMapping("list1")
     public String hospitalList(Model model)
     {
         List<Hospital> hospitals = adminHospitalService.findHospitals();

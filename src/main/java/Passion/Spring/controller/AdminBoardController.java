@@ -45,7 +45,7 @@ public class AdminBoardController {
         return "admin/admin_board_edit";
     }
 
-    @PostMapping("update")
+    @PostMapping("update1")
     public String boardUpdate(BoardForm boardForm)
     {
         Board board = new Board();

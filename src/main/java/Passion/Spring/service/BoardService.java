@@ -61,6 +61,21 @@ public class BoardService extends AdminBoardService {
         return board;
     }
 
+    public Board updateFormBoardObject(Board board, BoardForm boardForm)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String dateStr = dateFormat.format(date);
+
+        Optional <Board> helper = findByNo(boardForm.getNo());
+        board = helper.get();
+        board.setFileName(boardForm.getFileName());
+        board.setNo(boardForm.getNo());
+        board.setContent(boardForm.getContent());
+        board.setUpdate_day(dateStr);
+        return board;
+    }
+
 
 
 

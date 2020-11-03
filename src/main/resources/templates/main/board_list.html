@@ -313,55 +313,54 @@
 
 
 
-                                        <tr th:each = "fuck : ${fucking}" >
+                                        <tr th:each = "helper : ${help}" >
                                             <td  class="td_article">
-                                                <div class="board-number"><div class="inner_number" th:text="${fuck.board.no}">12321</div></div>
+                                                <div class="board-number"><div class="inner_number" th:text="${helper.board.no}">12321</div></div>
                                                 <div class="board-list">
                                                     <div class="inner_list">
-                                                        <a class="article" th:href="@{/board/view(no=${fuck.board.no})}" th:text="${fuck.board.title}">안녕하세요</a> &nbsp;
+                                                        <a class="article" th:href="@{/board/view(no=${helper.board.no})}" th:text="${helper.board.title}">안녕하세요</a> &nbsp;
 
-                                                        <span class="list-i-img" th:if="${fuck.board.picture!=''}"><i class="fas fa-images"></i></span>
+                                                        <span class="list-i-img" th:if="${helper.board.picture!=''}"><i class="fas fa-images"></i></span>
 
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="td_name" th:text="${fuck.member.getId()}"> rpdud10</td>
-                                            <td class="td_date" th:text="${fuck.board.getCreate_day()}">00:17</td>
-                                            <td class="td_date" th:text="${fuck.board.getViews()}">12</td>
+                                            <td class="td_name" th:text="${helper.member.getId()}"> rpdud10</td>
+                                            <td class="td_date" th:text="${helper.board.getCreate_day()}">00:17</td>
+                                            <td class="td_date" th:text="${helper.board.getViews()}">12</td>
                                         </tr>
 
 
 
 
-                                        <tr>
-                                            <td  class="td_article">
-                                                <div class="board-number"><div class="inner_number">10588309</div></div>
-                                                <div class="board-list">
-                                                    <div class="inner_list">
-                                                        <a class="article">안녕하세요</a> &nbsp;
-                                                        <span class="list-i-img"><i class="fas fa-images"></i></span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="td_name">
-                                                rpdud10</td>
-                                            <td class="td_date">00:17</td>
+<!--                                        <tr>-->
+<!--                                            <td  class="td_article">-->
+<!--                                                <div class="board-number"><div class="inner_number">10588309</div></div>-->
+<!--                                                <div class="board-list">-->
+<!--                                                    <div class="inner_list">-->
+<!--                                                        <a class="article">안녕하세요</a> &nbsp;-->
+<!--                                                        <span class="list-i-img"><i class="fas fa-images"></i></span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td class="td_name">-->
+<!--                                                rpdud10</td>-->
+<!--                                            <td class="td_date">00:17</td>-->
 
 
-                                        </tr>
+<!--                                        </tr>-->
                                     </table>
 
                                     <!--th:href="@{/admin/disease/view1(no=${disease.no})}-->
                                     <nav class="dc-pagination">
                                         <ul>
-                                            <li class="dc-prevpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-left"></i></a></li>
-                                            <li><a href="">1</a></li>
-                                            <li><a href="">2</a></li>
-                                            <li><a href="">3</a></li>
-                                            <li><a href="">4</a></li>
-                                            <li><a href="">...</a></li>
-                                            <li><a href="">50</a></li>
-                                            <li class="dc-nextpage"><a href="javascrip:void(0);"><i class="lnr lnr-chevron-right"></i></a></li>
+                                            <li class="dc-prevpage"><a href="/board/list?no=1"><i class="lnr lnr-chevron-left"></i></a></li>
+                                            <div style="display: inline-block" th:each="pageNum : ${page}">
+
+                                                <li><a th:href="@{/board/list(no=${pageNum})}" th:text="${pageNum}">2</a></li>
+
+                                            </div>
+                                            <li class="dc-nextpage"><a th:href="@{/board/list(no=${maxPage})}"><i class="lnr lnr-chevron-right"></i></a></li>
                                         </ul>
                                     </nav>
                                 </div>

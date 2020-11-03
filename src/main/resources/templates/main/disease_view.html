@@ -146,36 +146,43 @@
                             <div class="dc-docsingle-header">
                                 <figure class="dc-docsingleimg">
 
-                                    <div id="map" style="width:255px; height: 255px;     padding: 5px; display: block;"></div>
-                                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=   df09703067e83f73fb2b30b9796c0d31"></script>
-                                    <script>
-                                        var container = document.getElementById('map');
-                                        var options = {
-                                            center: new kakao.maps.LatLng(37.648950,127.062982),
-                                            level: 3
-                                        };
+                                        <img th:src="@{/main-template/HTML/images/}+${disease.picture}"  alt="img description">
+                                        <figcaption>
+                                            <span class="dc-featuredtag"><i class="fa fa-bolt"></i></span>
+                                        </figcaption>
 
-                                        var map = new kakao.maps.Map(container, options);
-                                    </script>
+
+
+<!--                                    <div id="map" style="width:255px; height: 255px;     padding: 5px; display: block;"></div>-->
+<!--                                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=   df09703067e83f73fb2b30b9796c0d31"></script>-->
+<!--                                    <script>-->
+<!--                                        var container = document.getElementById('map');-->
+<!--                                        var options = {-->
+<!--                                            center: new kakao.maps.LatLng(37.648950,127.062982),-->
+<!--                                            level: 3-->
+<!--                                        };-->
+
+<!--                                        var map = new kakao.maps.Map(container, options);-->
+<!--                                    </script>-->
 
                                 </figure>
                                 <div class="dc-docsingle-content">
                                     <div class="dc-title">
                                         <a href="javascript:void(0)" class="dc-docstatus">순환기내과, 소아청소년과, 흉부외과</a>
-                                        <h2><a href="javascript:void(0);">부정맥</a> <i class="fa fa-award dc-awardtooltip"><em></em></i><em></em></h2>
+                                        <h2><a href="javascript:void(0);" th:text="${disease.title}">부정맥</a> <i class="fa fa-award dc-awardtooltip"><em></em></i><em></em></h2>
                                         <ul class="dc-docinfo">
                                             <li>
-                                                <em>진단 :대부분의 빈혈이 의심되면 병원에서는 환자의 병력, 신체검사와 혈액검사, 전체혈구계산(CBC)를 포함하는 검사를 통해 진단을 함.</em>
+                                                <em th:text="${disease.small}">진단 :대부분의 빈혈이 의심되면 병원에서는 환자의 병력, 신체검사와 혈액검사, 전체혈구계산(CBC)를 포함하는 검사를 통해 진단을 함.</em>
                                             </li>
                                         </ul>
                                         <a href="javascript:void(0);" class="dc-like"><i class="fa fa-heart"></i></a>
                                     </div>
-                                    <div class="dc-description">
-                                        <p>종류: 철결핍성 빈혈, 비타민 결핍성 빈혈, 만성질환 빈혈, 재생불량성 빈혈, 골수 질환과 관련된 빈혈, 용혈성 빈혈, 기타 다른 종류의 빈혈</p>
-                                        <br>
-                                    </div>
+<!--                                    <div class="dc-description">-->
+<!--                                        <p>종류: 철결핍성 빈혈, 비타민 결핍성 빈혈, 만성질환 빈혈, 재생불량성 빈혈, 골수 질환과 관련된 빈혈, 용혈성 빈혈, 기타 다른 종류의 빈혈</p>-->
+<!--                                        <br>-->
+<!--                                    </div>-->
                                     <div class="dc-btnarea">
-                                        <a href="javascript:void(0);" class="dc-btn" data-toggle="modal" data-target="#appointment">근처 병원 확인하기</a>
+                                        <a href="/disease/list?no=1" class="dc-btn"  data-target="#appointment">돌아가기</a>
                                     </div>
                                 </div>
                             </div>
@@ -190,9 +197,9 @@
                                     <div class="dc-contentdoctab dc-location-holder tab-pane fade active show" id="locations">
                                         <div class="dc-aboutdoc dc-aboutinfo">
                                             <div class="dc-infotitle">
-                                                <h3>부정맥 증상</h3>
+                                                <h3 th:text="${disease.title}">부정맥</h3>
                                             </div>
-                                            <div class="dc-description"><p>
+                                            <div class="dc-description"><p th:text="${disease.content}">
                                                 1. 두근거림(심계항진)<br>
                                                 일반적으로 사람들은 자기 자신의 심박동을 인지하지 못합니다. 갑자기 어떤 일로 놀랐을 때처럼, 부정맥의 종류에 따라 빠르거나 느린 심박동을 본인이 느끼는 것입니다.<br>
                                                 2. 맥이 빠짐<br>
@@ -206,7 +213,7 @@
                                                 6. 급사<br>
                                                 부정맥이 심하게 나타나서 심장이 제대로 혈액을 내보내지 못하는 상황이 발생하거나 심정지가 발생할 경우 환자가 사망할 수도 있습니다.<br>
                                             </p>
-                                                <p>등등 어쩌구 저쩌구</p>
+<!--                                                <p>등등 어쩌구 저쩌구</p>-->
 
                                             </div>
                                         </div>
@@ -218,7 +225,7 @@
                             <aside id="dc-sidebar" class="dc-sidebar dc-sidebar-grid float-left mt-xl-0">
                                 <div class="dc-widget dc-onlineoptions">
                                     <figure class="dc-onlinuserimg">
-                                        <img src="/main-template/HTML/images/큐앤에이.png">
+
                                         <figcaption><span>Q&A</span></figcaption>
                                     </figure>
                                     <div class="dc-onlineoption-content">

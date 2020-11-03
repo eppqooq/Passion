@@ -17,8 +17,7 @@ public class Reply
     private String reg_date;
     private Integer board_no;
     private Integer member_no;
-    private String content;
-    //비회원을 위한
+    private String content;//비회원을 위한
     private String writer_name;
     private String password;
     public Integer available;

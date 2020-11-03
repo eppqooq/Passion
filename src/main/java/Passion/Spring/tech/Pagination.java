@@ -23,6 +23,7 @@ public class Pagination<T> {
             this.maxPageValue = totalDataCount/dataDisplayPerPage;
         else
             this.maxPageValue = (totalDataCount/dataDisplayPerPage) + 1; // 나눗셈 결과에 나머지가 있으면, (몫 + 1)개의 페이지가 필요
+
         this.minPageValue=1; // 가장 작은 페이지 번호는 1이겠지 뭐
     }
     public Pagination(List<T> paginationObject, int currentPageNum) // Object와 현재 넘버만 가진 생성자
@@ -59,13 +60,30 @@ public class Pagination<T> {
     {
         List<Integer> helpers = new ArrayList<>();
         Integer helper = pageDisplayPerPage / 2;
+        System.out.println("pageDisplayPerPage = " + pageDisplayPerPage);
+        System.out.println("pageDisplayPerPage/2 = " + pageDisplayPerPage/2);
+        System.out.println("currentPageNum = " + currentPageNum);
         int ii;
-        for (int i=0; i<=pageDisplayPerPage-1; i++)
+
+        if (currentPageNum <= helper)
         {
-            ii = currentPageNum+(helper-1);
-            if (0 <= ii && ii <= maxPageValue)
-            helpers.add(currentPageNum+(helper-1)+ i);
+            for (int i=1; i<=pageDisplayPerPage; i++)
+            {
+                if (i<=maxPageValue)
+                helpers.add(i);
+            }
         }
+        else
+        {
+            for (int i = 0; i <= pageDisplayPerPage - 1; i++) {
+                ii = currentPageNum - helper;
+                System.out.println("ii = " + ii);
+                System.out.println("ii+i = " + (ii + i));
+                if (0 <= ii+i && ii+i <= maxPageValue)
+                    helpers.add(ii + i);
+            }
+        }
+        System.out.println("helpers = " + helpers);
         return helpers;
     }
 
