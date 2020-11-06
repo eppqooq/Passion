@@ -211,7 +211,8 @@ public class BoardController extends AdminBoardController {
 
         for(Reply reply : replysWhereBoardNo)
         {
-            Optional <Member> memberWhereMemberNoInReply = adminMemberService.findByNo((long)reply.getMember_no());
+            Optional <Member> memberWhereMemberNoInReply
+                    = adminMemberService.findByNo((long)reply.getMember_no());
             ViewHelper helper = new ViewHelper(reply, memberWhereMemberNoInReply.get());
             viewHelpers.add(helper);
         }
@@ -219,6 +220,7 @@ public class BoardController extends AdminBoardController {
         if (board.get().getViews()!=null)
                 board.get().setViews(board.get().getViews()+1);
         boardService.updateBoard(board.get());
+
         model.addAttribute("viewHelpers",viewHelpers);
         model.addAttribute("board",board);
         model.addAttribute("member",member);
