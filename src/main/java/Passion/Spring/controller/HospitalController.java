@@ -102,7 +102,8 @@ public class HospitalController extends AdminHospitalController{
                                Model model,
                                HttpSession session) {
         String searchText = (String) session.getAttribute("searchText");
-        session.removeAttribute("searchText");
+        session.removeAttribute("searchText"); //세션부터 삭제하시고
+        session.removeAttribute("searchKind");
         List<Hospital> hospitals = adminHospitalService.findHospitals();
         List<Hospital> searchHospital = new ArrayList<>();
         List<Review> allReviews = adminReviewService.findReviews(); // 전체 리뷰 중

@@ -27,10 +27,10 @@ public class MainController {
                          HttpSession session, Model model)
     {
         session.setAttribute("searchText",searchText);
+        session.setAttribute("searchKind",searchKind);
         //model.addAttribute("searchText",searchText);
         if(searchKind.equals("게시판"))           // searchText가 게시판이면
         {
-            System.out.println("게시판");
             return "redirect:/board/list?no=1";
         }
         else if(searchKind.equals("병원")) // searchText가 병원이면

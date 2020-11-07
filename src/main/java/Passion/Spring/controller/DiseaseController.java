@@ -27,11 +27,15 @@ public class DiseaseController
     @GetMapping("list")
     public String diseaseList(HttpSession session, @RequestParam ("no") int no, Model model)
     {
+
+
         List <Disease> diseases = adminDiseaseService.findDiseases();
         List <Disease> searchedDiseases = new ArrayList<>();
         List <Disease> integration = new ArrayList<>();
         int diseasesCount;
         String searchText = (String)session.getAttribute("searchText");
+        session.removeAttribute("searchText"); //세션부터 삭제하시고
+        session.removeAttribute("searchKind");
         if ( searchText != null) // 찾고자 하는 내용이 있다면
         {
             for ( Disease disease : diseases)

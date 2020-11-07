@@ -95,17 +95,17 @@
                 <div class="ArticleContentBox" style="margin-bottom: 200px;">
                     <div class="article_header">
                         <div class="ArticleTitle">
-                            <div class="" style="margin-bottom:-51px; float:right !important;" th:if="${isMe}">
+                            <div class="" style="margin-bottom:-51px; float:right !important;" th:if="${isMe == 'me'}">
                                 <a class="dc-btn" style="margin-right: 10px; min-width: 70px !important;"
                                    th:href="@{/board/update(no=${board.get().getNo()})}">수정</a>
                                 <a class="dc-btn" style="min-width: 70px !important;"
                                    th:href="@{/board/deleteBoard(no=${board.get().getNo()})}">삭제</a>
                             </div>
-                            <a class="link_board" href="/" th:text="${board.get().getKind_no()}"> 정신과
-                                <svg aria-hidden="true" class="svg-icon ico-post-arrow-03-c-75-a">
-                                    <use xlink:href="#ico-post-arrow-03-c-75-a"></use>
-                                </svg>
-                            </a>
+<!--                            <a class="link_board" href="/" th:text="${board.get().getKind_no()}"> 정신과-->
+<!--                                <svg aria-hidden="true" class="svg-icon ico-post-arrow-03-c-75-a">-->
+<!--                                    <use xlink:href="#ico-post-arrow-03-c-75-a"></use>-->
+<!--                                </svg>-->
+<!--                            </a>-->
                             <div class="title_area"><!----><!----><!---->
                                 <h3 class="title_text" th:text="${board.get().getTitle()}">
                                     요즘 헛것이 보이네요
@@ -199,7 +199,7 @@
                                 <div class="CommentWriter" data-v-79bd409c="">
                                     <div class="comment_inbox" data-v-79bd409c="">
                                         <em class="comment_inbox_name" data-v-79bd409c="" th:if="${isMe}" th:text="${sessionMember.getId()}">rpdud10</em>
-                                        <em class="comment_inbox_name" data-v-79bd409c="" th:if="${isMe}==${null}" th:text="@{비회원}">rpdud10</em>
+                                        <em class="comment_inbox_name" data-v-79bd409c="" th:if="${isMe == null}" th:text="@{비회원}">rpdud10</em>
                                         <textarea name="content" class="comment_inbox_text" data-v-79bd409c="" placeholder="댓글을 남겨보세요"
                                                   rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 50px;"></textarea>
                                         <!----><!----></div>

@@ -38,84 +38,50 @@ public class BoardController extends AdminBoardController {
         this.adminHospitalService=adminHospitalService;
         this.adminReplyService=adminReplyService;
     }
+
     @GetMapping("list") // main에서 게시판 검색 또는 게시판 메뉴를 클릭해서 들어올 때
     public String boardList(HttpSession session, Model model, @RequestParam("no") int no)
     {
-        String searchText = (String) session.getAttribute("searchText");
-        session.removeAttribute("searchText"); //세션부터 삭제하시고
-        if (searchText!=null) // searchText의 값이 있다면
-        {
-            List<A> helpers1 = new ArrayList<>();
-            List<Board> boards = boardService.findBoards();
-            List<Board> contentContainBoards = new ArrayList<>();
-            List<String> members = new ArrayList<>();
-            Optional<Member> helper = null;
 
-            for (Board board : boards) // 전체 게시판들 중에
-            {
-                if(board.getContent().contains(searchText) == true) // 컨텐츠에 searchText를 포함한 애가 있나요?
-                    contentContainBoards.add(board);                       // 있으면 containBoards에 넣으세요.
+        // searchText의 값이 없다면
+
+        List<A> helpers3 = new ArrayList<>();
+        List<Board> boards = boardService.findBoards();
+        List<String> members = new ArrayList<>();
+        Optional<Member> helper = null;
+
+        for (Board board : boards) {
+            helper = adminMemberService.findByNo(board.getMember_no());
+            if (helper.isPresent()) {
+                members.add(helper.get().getId());
+                A temp = new A(board, helper.get());
+                helpers3.add(temp);
             }
-            
-            for (Board board : contentContainBoards) { //모든 게시판 자료 중에
-
-                helper = adminMemberService.findByNo(board.getMember_no()); // 해당 게시판의 작성자를 받는 optional helper.
-                if (helper.isPresent()) {
-                    members.add(helper.get().getId()); // 빈 배열 members에 해당 게시판의 작성자를 추가한다.
-                    A temp = new A(board, helper.get()); // 해당 게시판 객체와 작성자 객체를 갖고 생성되는 fuck 객체.
-                    helpers1.add(temp); // temp들을 가지고 있는 helpers1 객체의 배열에 요소 하나 추가.
-                }
-            } // -> helpers1이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
-
-
-            Pagination <A> pagination=new Pagination<A>(helpers1,no,helpers1.size(),7, 5);
-
-            System.out.println("페이지 번호 = " + no);
-            List<A> help = pagination.paginationObject();
-            model.addAttribute("help", help);
-            List<Integer> page= pagination.paginationPage();
-            model.addAttribute("page",page);
-            model.addAttribute("maxPage",helpers1.size());
-            System.out.println("page = " + page);
         }
-        else  // searchText의 값이 없다면
-        {
-            List<A> helpers3 = new ArrayList<>();
-            List<Board> boards = boardService.findBoards();
-            List<String> members = new ArrayList<>();
-            Optional<Member> helper = null;
+        Pagination <A> pagination=new Pagination<A>(helpers3,no,helpers3.size(),5, 5);
+        List<A> help = pagination.paginationObject();
+        model.addAttribute("help", help);
+        List<Integer> page= pagination.paginationPage();
+        model.addAttribute("page",page);
+        model.addAttribute("maxPage",pagination.getMaxPageValue());
 
-            for (Board board : boards) {
-                helper = adminMemberService.findByNo(board.getMember_no());
-                if (helper.isPresent()) {
-                    members.add(helper.get().getId());
-                    A temp = new A(board, helper.get());
-                    helpers3.add(temp);
-                }
-            }
-            Pagination <A> pagination=new Pagination<A>(helpers3,no,helpers3.size(),7, 5);
-            List<A> help = pagination.paginationObject();
-            model.addAttribute("help", help);
-            List<Integer> page= pagination.paginationPage();
-            model.addAttribute("page",page);
-            model.addAttribute("maxPage",pagination.getMaxPageValue());
 
-        }
         return "main/board_list";
     }
-    @PostMapping("list")
-    public String searchedBoard(@RequestParam("searchText") String searchText,
-                                @RequestParam("searchKindOf") String searchKindOf,
-                                        Model model)
+
+    @PostMapping("list") // 메인페이지 또는 리스트에서 검색 버튼으로 온 경우
+    public String searchedBoard(HttpSession session, Model model)
     {
-        
+        String searchText = (String) session.getAttribute("searchText");
+        session.removeAttribute("searchText"); //세션부터 삭제하시고
+        String searchKindOf = (String) session.getAttribute("searchKind");
+        session.removeAttribute("searchKind");
+
         List<A> help = new ArrayList<>();
 
         List<Board> boards = boardService.findBoards();
         List<String> members = new ArrayList<>();
         Optional<Member> helper = null;
-        System.out.println("searchText = " + searchText);
-        System.out.println("searchKindOf = " + searchKindOf);
 
         if (searchKindOf.equals("내용"))  // 내용 검색일 경우
         {
@@ -127,7 +93,6 @@ public class BoardController extends AdminBoardController {
                 if (board.getContent().contains(searchText) == true) // 내용에 searchText를 포함한 애가 있나요?
                     contentContainBoards.add(board);                       // 있으면 containBoards에 넣으세요.
             }
-
             for (Board board : contentContainBoards) { //모든 게시판 자료 중에
 
                 helper = adminMemberService.findByNo(board.getMember_no()); // 해당 게시판의 작성자를 받는 optional helper.
@@ -138,12 +103,13 @@ public class BoardController extends AdminBoardController {
                 }
             } // -> fucking이 모든 보드와 보드에 해당하는 작성자를 가지고 있게끔 함
             Pagination<A> pagination = new Pagination<A>(help,1,help.size(),7,5);
-                    List<A> paginationHelp=pagination.paginationObject();
-                    List<Integer> page = pagination.paginationPage();
+            List<A> paginationHelp=pagination.paginationObject();
+            List<Integer> page = pagination.paginationPage();
+            model.addAttribute("searchText",searchText);
+            model.addAttribute("searchKindOf",searchKindOf);
             model.addAttribute("page",page);
             model.addAttribute("maxPage",pagination.getMaxPageValue());
             model.addAttribute("help",paginationHelp);
-            
         }
         else if (searchKindOf.equals("제목"))// searchKindOf == "제목"
         {
@@ -171,13 +137,12 @@ public class BoardController extends AdminBoardController {
             Pagination<A> pagination = new Pagination<A>(help,1,help.size(),7,5);
             List<A> paginationHelp=pagination.paginationObject();
             List<Integer> page = pagination.paginationPage();
+            model.addAttribute("searchText",searchText);
+            model.addAttribute("searchKindOf",searchKindOf);
             model.addAttribute("page",page);
             model.addAttribute("maxPage",pagination.getMaxPageValue());
             model.addAttribute("help",paginationHelp);
         }
-        model.addAttribute("searchText",searchText);
-        model.addAttribute("searchKindOf",searchKindOf);
-
         return "main/board_list";
     }
 
@@ -190,11 +155,12 @@ public class BoardController extends AdminBoardController {
 
         if(loginedMemberNo != null) // 로그인 한 상태일 경우
         {
-            if(member.get().getNo().equals(loginedMemberNo) == true )
-                model.addAttribute("isMe",true);
+            
+            if(member.get().getNo().equals(loginedMemberNo) == true ) // 본인일 경우
+                model.addAttribute("isMe","me");
+            else model.addAttribute("isMe","other"); // 본인이 아닐 경우
             Optional <Member> sessionMember = adminMemberService.findByNo(loginedMemberNo);
                 model.addAttribute("sessionMember",sessionMember.get());
-
         }
         //Optional <Hospital> hospital = adminHospitalService.findByNo(board.get().get());
         List<Reply> replys = adminReplyService.findReplys(); // 전체 reply 조회
